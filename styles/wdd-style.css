@@ -66,3 +66,59 @@ nav ul li a:hover {
     padding: 3px;
     border-radius: 5px;
 }
+
+main {
+    margin: 0 30px;
+}   
+
+main h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2em;
+    color: rgb(6, 6, 101);
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.contents h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5em;
+    background-color: rgb(6, 6, 101);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+figure img {
+    width: 300px;
+    height: auto;
+}
+
+figure figcaption {
+    font-family: "Port Lligat Sans", sans-serif;
+    font-weight: 600;
+    color: rgb(6, 6, 101);
+    text-align: center;
+    margin: 10px 0;
+}

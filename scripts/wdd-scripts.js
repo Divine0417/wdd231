@@ -100,7 +100,7 @@ function displayCourses(filter = "ALL") {
             <h3>${course.title} (${course.subject} ${course.number})</h3>
             <p>Credits: ${course.credits}</p>
             <p class="${course.completed ? 'completed' : 'pending'}">
-                ${course.completed ? 'Completed' : 'In Progress'}
+                ${course.completed ? '✔ Completed' : '⏭In Progress'}
             </p>
         `;
         courseList.appendChild(courseItem);

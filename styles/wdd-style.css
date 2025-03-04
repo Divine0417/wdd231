@@ -2,3 +2,23 @@
     box-sizing: border-box;
 }
 
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(6, 6, 101);
+    padding: 10px;
+}
+
+.profile span {
+    color: aliceblue;
+    font-family: "Josefin Sans", 'Times New Roman';
+    font-size: 2em;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.profile img {
+    width: 50px;
+    height: auto;
+}

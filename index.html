@@ -22,10 +22,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="#" title="Chamber">Chamber</a></li>
+                <li><a href="#" target="_blank" title="GitHub Profile">GitHub Profile</a></li>
+                <li><a href="#" target="_blank" title="LinkedIn">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
@@ -34,11 +34,7 @@
         <section class="contents">
             <div class="content-container">
                 <h2>Course Work</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <ul id="course-work-list"></ul>
             </div>
         </section>
 
@@ -56,20 +52,15 @@
             <div class="content">
                 <h2>Web and Computer Programming Certificate</h2>
                 <div>
-                    <button class="btn">All</button>
-                    <button class="btn">CSE</button>
-                    <button class="btn">WDD</button>
+                    <button id="all-btn">All</button>
+                    <button id="cse-btn">CSE</button>
+                    <button id="wdd-btn">WDD</button>
                 </div>
-                <div>
-                    <p class="courses"></p>
-                    <p class="courses"></p>
-                    <p class="courses"></p>
-                    <p class="courses"></p>
-                    <p class="courses"></p>
-                    <p class="courses"></p>
-                </div>
+                <div id="course-list"></div>
+                <p id="total-credits">Total Credits: 0</p>
             </div>
         </section>
+    </main>
     <footer>
         <p class="main">&copy; <span id="currentyear"></span> 💻 Omotayo Ayobami Oyedele 💻 Nigeria</p>
         <p id="lastModified"></p>

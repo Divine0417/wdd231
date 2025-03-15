@@ -52,7 +52,7 @@ nav ul {
 
 nav ul li {
     margin: 0 20px;
-    padding: 3px; /* Add padding to ensure background color covers the entire list item */
+    padding: 3px;
 }
 
 nav ul li a {
@@ -66,7 +66,7 @@ nav ul li a:hover {
     background-color: rgba(255, 217, 0, 0.281);
     padding: 3px;
     border-radius: 5px;
-    display: block; /* Ensure the background color covers the entire link area */
+    display: block;
 }
 
 main {
@@ -110,7 +110,7 @@ figure {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    width: fit-content; /* Adjust figure to take the size of the image */
+    width: fit-content;
 }
 
 figure img {

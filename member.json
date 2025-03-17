@@ -1,0 +1,15 @@
+[
+    {
+        "family_name": "Doe",
+        "move_in_date": "2024-01-01",
+        "number_of_people": 4,
+        "visited_by_bishopric": true,
+        "family_members": [
+            {
+                "first_name": "John",
+                "gender": "Male",
+                "age": "40"
+            }
+        ]
+    }
+]

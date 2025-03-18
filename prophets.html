@@ -6,7 +6,7 @@
         <meta name="author" content="Omotayo Ayobami Oyedele">
         <meta name="keywords" content="Latter-day Prophets, Church of Jesus Christ, LDS, Prophets, Religious Leaders">
         <meta name="description" content="A webpage showcasing the Latter-day Prophets with details and information about each prophet.">
-        <link rel="stylesheet" href="styles/wdd-style.css">
+        <link rel="stylesheet" href="styles/prophets.css">
         <title>WDD 231 | Prophets | Omotayo Ayobami Oyedele</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,20 @@
 <body>
     <header>
         <h1>Latter-day Prophets</h1>
-      </header>
-      <main>
-        <section id="filters">
-            <h2>Filter Prophets</h2>
-        </section>
-        <div id="cards"></div>
-      </main>
-      <footer>
+    </header>
+    <main>
+        <div class="filter-container">
+            <button class="filter-btn" data-filter="utah-born">Born in Utah</button>
+            <button class="filter-btn" data-filter="outside-us">Born Outside U.S.</button>
+            <button class="filter-btn" data-filter="lived-95">Lived to 95+</button>
+            <button class="filter-btn" data-filter="large-family">10+ Children</button>
+            <button class="filter-btn" data-filter="long-presidency">15+ Years as President</button>
+            <button class="filter-btn" data-filter="all">All</button>
+        </div>
+        <div id="cards" class="cards"></div>
+    </main>
+    <footer>
         Omotayo Ayobami Oyedele | Latter-day Prophets
-      </footer>
+    </footer>
 </body>
 </html>

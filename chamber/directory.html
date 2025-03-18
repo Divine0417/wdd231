@@ -54,6 +54,10 @@
         </script>
     </head>
 <body>
-    
+    <div id="json-preview"></div>
+    <script type="text/javascript">
+        const jsonPreview = document.getElementById('json-preview');
+        jsonPreview.innerHTML = `<pre>${JSON.stringify(member, null, 2)}</pre>`;
+    </script>
 </body>
 </html>

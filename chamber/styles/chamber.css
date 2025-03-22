@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -17,11 +16,32 @@ header {
     padding: 15px 20px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+span {
+    font-size: 15px;
+}
+
 .logo img {
     height: 40px;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 10px;
+}
+
 nav ul {
+    font-family: "Josefin Sans", sans-serif;
     list-style: none;
     padding: 0;
     display: flex;
@@ -29,7 +49,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
 }
 
 nav ul li a {
@@ -37,17 +57,60 @@ nav ul li a {
     color: white;
     padding: 8px 12px;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.5s ease;
 }
 
 nav ul li a:hover {
     background-color: #002d5a;
 }
 
-/* Hero Section */
+.more-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+}
+
+/* Dropdown Menu */
+.more-nav {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    right: 20px;
+    padding: 10px 0;
+}
+
+.more-nav li {
+    list-style: none;
+    padding: 10px;
+}
+
+.more-nav a {
+    display: block;
+    padding: 10px;
+    color: #004080;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.more-nav a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Show dropdown when active */
+.more-nav.show {
+    display: block;
+}
+
+
 #hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 10px;
     background-color: #e0e0e0;
 }
 
@@ -114,7 +177,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;

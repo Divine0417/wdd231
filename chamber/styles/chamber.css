@@ -1,4 +1,17 @@
-/* General Styles */
+:root {
+    --primary-color: #2E8B57;
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #333333;
+    --background-color: #F5F5DC;
+    --hover-color: tomato;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -109,8 +122,6 @@ nav ul li a:hover {
     opacity: 1;
 }
 
-
-
 #hero {
     text-align: center;
     padding: 50px 10px;
@@ -143,7 +154,6 @@ nav ul li a:hover {
     background-color: #cc5200;
 }
 
-/* Info Section */
 .info-section {
     display: flex;
     justify-content: center;
@@ -186,6 +196,16 @@ footer {
     color: white;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-info {
+    flex: 1;
+    align-self: flex-start;
+}
+
 .social-media a {
     color: white;
     text-decoration: none;
@@ -194,4 +214,138 @@ footer {
 
 .social-media a:hover {
     color: #ff6600;
+}
+
+.more-button span {
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: none;
+        position: absolute; 
+        top: 20px; 
+        right: 20px;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+      
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+        
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(50deg) translate(6px, 9px);
+    }
+        
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+      
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-50deg) translate(5px, -9px);
+    }
+      
+    .hamburger {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+        
+    #nav-menu {
+        display: none; 
+    }
+        
+    #nav-menu.active {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 5px;
+    }
+      
+    #nav-menu.active ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+        
+    #nav-menu ul li a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: var(--secondary-color);
+        transition: background 0.3s;
+    }
+    
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-section div {
+        margin-bottom: 20px;
+    }
+
+    .business-listings {
+        flex-direction: column;
+    }
+
+    .business-card {
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-info {
+        text-align: justify;
+        font-family: "Port Lligat Sans", sans-serif;
+        color: #f9f9f9;
+        margin-bottom: 20px;
+    }
+
+    .footer-info a {
+        color: #f9f9f9;
+        text-decoration: none;
+    }
+
+    .footer-header {
+        font-family: "Josefin Sans", sans-serif;
+        color: gold;
+        font-weight: 900;
+    }
+
+    .footer-legal {
+        font-family: "Port Lligat Sans", sans-serif;
+        color: #f9f9f9;
+        text-align: justify;
+        padding: 10px;
+    }
+
+    #lastModified, .footer-legal span {
+        font-family: "Josefin Sans", sans-serif;
+        color: gold;
+    }
+
+    .social-media {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+
+    .social-media a {
+        background-color: gray;
+        border-radius: 40px;
+        padding: 10px;
+        margin: 0 20px;
+    }
+
+    .more-nav {
+        right: 10px;
+    }
+    
 }

@@ -18,3 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("currentyear").textContent = currentYear;
     document.getElementById("lastModified").textContent = "Last Modified: " + lastModified;
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+  
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      const ariaExpanded = navMenu.classList.contains('active') ? 'true' : 'false';
+      navMenu.setAttribute('aria-expanded', ariaExpanded);
+    });
+  });
+  

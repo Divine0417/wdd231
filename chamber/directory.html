@@ -22,11 +22,16 @@
 </head>
 <body>
     <header>
-        <div class="logo">
+        <div class="logo" title="Timbuktu Chamber of Commerce">
             <img src="images/OIP.jpeg" alt="Timbuktu Chamber of Commerce">
             <h1><Span>Timbuktu</Span><br>Chamber of Commerce</h1>
         </div>
-        <nav>
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-expanded="false">
             <ul class="desktop-nav">
                 <li><a href="index.html" title="Home">Home</a></li>
                 <li><a href="discover.html" title="Discover">Discover</a></li>
@@ -34,7 +39,7 @@
                 <li><a href="join.html" title="Join">Join</a></li>
                 <li class="more">
                     <button class="more-button">
-                        <span class="circle-icon" title="More">⬤</span> <!-- Circle Icon -->
+                        <span class="circle-icon" title="More">◑</span>
                     </button>
                     <ul class="more-nav">
                         <li><a href="about.html" title="About">About</a></li>
@@ -96,21 +101,24 @@
     </main>
 
     <footer>
-        <div>
+        <div class="footer-content">
             <div class="footer-info">
-                <p>Timbuktu Chamber of Commerce</p>
+                <p class="footer-header">Timbuktu Chamber of Commerce</p>
                 <p>123 Main St, Timbuktu</p>
-                <a href="mailto:infotimbuktuchamber234.org" title="email">infotimbuktuchamber234.org</i></a>
-                <p>123-555-2520</p>
+                <a href="mailto:info@timbuktuccc234.org" title="email">info@timbuktucc234.org</i></a>
+                <p>(123) 555-2520</p>
             </div>
             <div class="social-media">
                 <a href="https://www.twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/" target="_blank" title="linkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
             </div>
-            <p class="main">&copy; <span id="currentyear"></span> 💻 Omotayo Ayobami Oyedele 💻 Nigeria</p>
-            <p id="lastModified"></p>
-    
+            <div class="footer-legal">
+                <p>WDD231 Class Project</p>
+                <p>💻 Omotayo Ayobami Oyedele 💻 Nigeria</p>
+                <p class="main">&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p id="lastModified"></p>
+            </div>
         </div>
     </footer>
 </body>

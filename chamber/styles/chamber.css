@@ -1,5 +1,4 @@
 :root {
-    --primary-color: #2E8B57;
     --secondary-color: #FFFFFF;
     --tertiary-color: #333333;
     --background-color: #f4f4f4;
@@ -36,6 +35,12 @@ header {
     gap: 3px;
     font-family: "Josefin Sans", sans-serif;
     margin-left: 30px;
+}
+
+.logo span {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 span {
@@ -129,19 +134,13 @@ nav ul li a:hover {
 
 #hero {
     text-align: center;
-    padding: 50px 10px;
+    padding: 10px;
     background-color: #e0e0e0;
 }
 
-.hero-image {
+.hero-image img {
     width: 100%;
-    height: 200px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--tertiary-color);
+    height: 300px;
 }
 
 .cta {
@@ -149,14 +148,33 @@ nav ul li a:hover {
     padding: 10px 20px;
     background-color: #ff6600;
     color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
     margin-top: 20px;
 }
 
 .cta:hover {
     background-color: #cc5200;
+}
+
+main h2 {
+    margin: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+}
+
+/* main h3 {
+    padding: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+    background-color: #e0e0e0;
+} */
+
+.weather img {
+    width: 100px;
+    height: 100px;
 }
 
 .info-section {
@@ -173,7 +191,7 @@ nav ul li a:hover {
 .info-section div {
     flex: 1;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: wheat;
     border-radius: 10px;
     text-align: center;
 }
@@ -185,13 +203,36 @@ nav ul li a:hover {
     padding: 20px;
 }
 
+.business-card h3 {
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.business-card p {
+    font-family: "Port Lligat Sans", sans-serif;
+    color: var(--hf-color)
+    
+}
+
 .business-card {
-    flex: 1;
-    background: white;
+    background: wheat;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.business-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.business-contact p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Port Lligat Sans", sans-serif;
+    color: var(--hf-color);
+    margin: 0 10px;
 }
 
 footer {
@@ -269,7 +310,7 @@ footer {
         cursor: pointer;
         flex-direction: column;
         gap: 5px;
-        display: flex; /* Removed redundant 'display: none;' */
+        display: flex;
         transition: transform 0.3s ease-in-out;
     }
       
@@ -292,6 +333,11 @@ footer {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(-50deg) translate(5px, -9px);
     }
+
+    .hamburger {
+        display: flex;
+        transition: transform 0.1s ease-in-out;
+        }
       
     #nav-menu {
         display: none; 
@@ -314,7 +360,6 @@ footer {
         padding: 5px;
         text-decoration: none;
         color: var(--secondary-color);
-        transition: background 0.3s;
     }
     
     .info-section {

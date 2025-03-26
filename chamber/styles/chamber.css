@@ -1,0 +1,399 @@
+:root {
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #333333;
+    --background-color: #f4f4f4;
+    --hf-color: #004080;
+    --hover-color: tomato;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--tertiary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hf-color);
+    color: white;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-family: "Josefin Sans", sans-serif;
+    margin-left: 30px;
+}
+
+.logo span {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+span {
+    font-size: 15px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-weight: 800;
+}
+
+header h1 {
+    font-size: 10px;
+}
+
+nav ul {
+    font-family: "Josefin Sans", sans-serif;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0080ff86;
+}
+
+.more-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+
+.more-button:hover {
+    transform: translateY(-5px);
+}
+
+.more-nav {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    right: 20px;
+    padding: 8px 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.more-nav li {
+    list-style: none;
+    padding: 10px;
+}
+
+.more-nav a {
+    display: block;
+    padding: 10px;
+    color: var(--hf-color);
+    text-decoration: none;
+}
+
+.more-nav a:hover {
+    background-color: #004080a4;
+}
+
+.more-nav.show {
+    display: block;
+    opacity: 1;
+}
+
+#hero {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cta:hover {
+    background-color: #cc5200;
+}
+
+main h2 {
+    margin: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+}
+
+/* main h3 {
+    padding: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+    background-color: #e0e0e0;
+} */
+
+.weather img {
+    width: 100px;
+    height: 100px;
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section div {
+    flex: 1;
+    padding: 20px;
+    background-color: wheat;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.business-listings {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.business-card h3 {
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.business-card p {
+    font-family: "Port Lligat Sans", sans-serif;
+    color: var(--hf-color)
+    
+}
+
+.business-card {
+    background: wheat;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.business-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.business-contact p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Port Lligat Sans", sans-serif;
+    color: var(--hf-color);
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004080;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 5px;
+}
+
+.footer-info {
+    text-align: justify;
+    font-family: "Port Lligat Sans", sans-serif;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.footer-info a {
+    color: #f9f9f9;
+    text-decoration: none;
+}
+
+.footer-header {
+    font-family: "Josefin Sans", sans-serif;
+    color: gold;
+    font-weight: 900;
+}
+
+.footer-legal {
+    font-family: "Port Lligat Sans", sans-serif;
+    color: var(--secondary-color);
+    text-align: justify;
+    padding: 10px;
+}
+
+#lastModified, .footer-legal span {
+    font-family: "Josefin Sans", sans-serif;
+    color: gold;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.social-media a {
+    background-color: gray;
+    color: white;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 0 8px;
+}
+
+.social-media a:hover {
+    color: #ff6600;
+}
+
+.more-button span {
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        position: absolute; 
+        top: 20px; 
+        right: 20px;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+      
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: var(--secondary-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+        
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(50deg) translate(6px, 9px);
+    }
+        
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+      
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-50deg) translate(5px, -9px);
+    }
+
+    .hamburger {
+        display: flex;
+        transition: transform 0.1s ease-in-out;
+        }
+      
+    #nav-menu {
+        display: none; 
+    }
+        
+    #nav-menu.active {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 5px;
+    }
+      
+    #nav-menu.active ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+        
+    #nav-menu ul li a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+    
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-section div {
+        margin-bottom: 20px;
+    }
+
+    .business-listings {
+        flex-direction: column;
+    }
+
+    .business-card {
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .more-nav {
+        right: 10px;
+    }
+
+    .more-nav a {
+        display: block;
+        padding: 10px;
+        color: var(--hf-color);
+        text-decoration: none;
+    }
+    
+    .more-nav a {
+        color: var(--hf-color) !important;
+    }
+}

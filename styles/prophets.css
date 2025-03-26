@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: wheat;
+    font-family: "Port Lligat Sans", sans-serif;
+}
+
+
+h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2.5em;
+    background-color: rgb(9, 116, 134);
+    color: white;
+    text-align: center;
+    margin: 0 0 20px 0;
+    padding: 20px;
+}
+
+.filter-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    font-family: "Port Lligat Sans", sans-serif;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.5s;
+}
+
+.filter-btn:hover {
+    background: rgba(156, 134, 6, 0.671);
+    color: white;
+    border: 1px solid white;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.prophet-card {
+    background: black;
+    color: white;
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 400px;
+    display: inline-block;
+    box-shadow: 0 0 10px 5px white;
+}
+
+.prophet-card h2 {
+    font-family: "Josefin Sans", sans-serif;
+    color: yellow;
+}
+
+.prophet-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prophet-details p {
+    margin: 5px 0;
+}
+
+.prophet-details strong {
+    font-family: "Josefin Sans", sans-serif;
+    color: yellow;
+}
+
+footer {
+    background-color: rgb(9, 116, 134);
+    color: white;
+    font-family: "Port Lligat Sans", sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #cards {
+        grid-template-columns: 1fr;
+    }
+
+    .prophet-card {
+        width: 70%;
+        margin: 10px auto;
+    }
+
+    .prophet-card img {
+        display: inline-block;
+        width: 100%;
+        margin: 1%;
+        vertical-align: top;
+    }
+}

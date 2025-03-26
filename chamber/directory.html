@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Omotayo Ayobami Oyedele">
+    <meta name="description" content="Discover local businesses, upcoming events, and networking opportunities with the Timbuktu Chamber of Commerce.">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Port+Lligat+Sans&family=Roboto:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Chamber Directory | Timbuktu Chamber of Commerce</title>
+    <script src="scripts/directory.js" defer></script>
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Chamber Directory - Find Trusted Businesses">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.jpeg">
+    <meta property="og:url" content="https://directory.html">
+    <meta property="og:description" content="Find reputable businesses, discover networking opportunities, and stay informed about local events.">
+    <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
+</head>
+<body>
+    <header>
+        <div class="logo" title="Timbuktu Chamber of Commerce">
+            <h1><span>Timbuktu</span><br>Chamber of Commerce</h1>
+            <img src="images/logo.jpeg" alt="Timbuktu Chamber of Commerce">
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-expanded="false">
+            <ul class="desktop-nav">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="discover.html" title="Discover">Discover</a></li>
+                <li><a href="directory.html" title="Business-Directory">Business Directory</a></li>
+                <li><a href="join.html" title="Join">Join</a></li>
+                <li class="more">
+                    <button class="more-button">
+                        <span class="circle-icon" title="More">◑</span>
+                    </button>
+                    <ul class="more-nav">
+                        <li><a href="about.html" title="About">About</a></li>
+                        <li><a href="podcast.html" title="Podcast">Podcast</a></li>
+                        <li><a href="events.html" title="Events">Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-image">
+            <img src="images/logo.jpeg" alt="">
+            <p>Ad Block, Community Image</p>
+        </div>
+        <button class="cta">Register Tickets</button>
+    </section>
+
+    <main>
+        <h2>Home</h2>
+        <div class="info-section">
+            <div class="events">
+                <h3>Events</h3>
+                <p>Upcoming events listed here</p>
+            </div>
+            <div class="weather">
+                <h3>Current Weather</h3>
+                <img src="images/weather.svg" alt="Weather icon">
+                <p>75°F, Humidity 57%</p>
+            </div>
+            <div class="forecast">
+                <h3>Weather Forecast</h3>
+                <p>Temperature: 5 °C</p>
+                <p>Wind Speed: 10 km/h</p>
+            </div>
+        </div>
+
+        <div class="business-listings">
+            <div class="business-card">
+                <div class="business-info">
+                    <h3>Business Name</h3>
+                    <p>Business Tag Line</p>
+                </div>
+                <div class="business-contact">
+                    <img src="" alt="Business Images">
+                    <p>Location</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>URL: website.com</p>
+                </div>
+            </div>
+            <div class="business-card">
+                <div class="business-info">
+                    <h3>Business Name</h3>
+                    <p>Business Tag Line</p>
+                </div>
+                <div class="business-contact">
+                    <img src="" alt="Business Images">
+                    <p>Location</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>URL: website.com</p>
+                </div>
+            </div>
+            <div class="business-card">
+                <div class="business-info">
+                    <h3>Business Name</h3>
+                    <p>Business Tag Line</p>
+                </div>
+                <div class="business-contact">
+                    <img src="" alt="Business Images">
+                    <p>Location</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>URL: website.com</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="footer-header">Timbuktu Chamber of Commerce</p>
+                <p>123 Main St, Timbuktu</p>
+                <a href="mailto:info@timbuktucc.org" title="email">info@timbuktucc.org</i></a>
+                <p>(123) 555-2520</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" title="linkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-legal">
+                <p>WDD231 Class Project</p>
+                <p>💻 Omotayo Ayobami Oyedele 💻 Nigeria</p>
+                <p class="main">&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

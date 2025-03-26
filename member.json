@@ -1,0 +1,35 @@
+[
+    {
+        "family_name": "Doe",
+        "move_in_date": "2024-01-01",
+        "number_of_people": 4,
+        "visited_by_bishopric": true,
+        "family_members": [
+            {
+                "first_name": "John Smith",
+                "gender": "Male",
+                "age": "40",
+                "birthdate": "1984-01-01"
+            },
+            {
+                "first_name": "Jane Smith",
+                "gender": "female",
+                "age": "38",
+                "birthdate": "1986-09-15"
+            },
+            {
+                "first_name": "Johnny Smith",
+                "gender": "Male",
+                "age": "10",
+                "birthdate": "2014-06-10"
+            },          
+            {
+                "first_name": "Jenny Smith",
+                "gender": "female",
+                "age": "8",
+                "birthdate": "2016-03-20"
+            }
+        ]
+    }
+]
+    

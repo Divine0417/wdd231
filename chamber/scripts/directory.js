@@ -52,3 +52,56 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".weather").innerHTML += `<p>Windchill: ${windChillFactor}</p>`;
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Static values for weather details
+    const weatherDetails = {
+        temperature: "75°F",
+        condition: "Partly Cloudy",
+        high: "85°C",
+        low: "52°C",
+        humidity: "34%",
+        sunrise: new Date().toLocaleTimeString(),
+        sunset: new Date().toLocaleTimeString()
+    };
+
+    const forecastDetails = getForecastDetails();
+
+    // Append weather details
+    appendWeatherDetails(weatherDetails);
+
+    // Append forecast details
+    appendForecastDetails(forecastDetails);
+
+    function appendWeatherDetails(details) {
+        const weatherElement = document.querySelector(".weather");
+        weatherElement.innerHTML += `
+            <p>Temperature: ${details.temperature}</p>
+            <p>Condition: ${details.condition}</p>
+            <p>High: ${details.high}, Low: ${details.low}</p>
+            <p>Humidity: ${details.humidity}</p>
+            <p>Sunrise: ${details.sunrise}</p>
+            <p>Sunset: ${details.sunset}</p>
+        `;
+    }
+
+    function appendForecastDetails(forecast) {
+        const forecastElement = document.querySelector(".forecast");
+        forecast.forEach(f => {
+            forecastElement.innerHTML += `<p>${f.day}: <strong>${f.temperature}</strong></p>`;
+        });
+    }
+
+    function getForecastDetails() {
+        const today = new Date();
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        const forecast = [
+            { day: "Today", temperature: "90°F" },
+            { day: daysOfWeek[(today.getDay() + 1) % 7], temperature: "85°F" }, // Tomorrow
+            { day: daysOfWeek[(today.getDay() + 2) % 7], temperature: "80°F" }  // Two Days Later
+        ];
+
+        return forecast;
+    }
+});

@@ -22,20 +22,15 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--hf-color);
     color: white;
     padding: 15px 20px;
 }
 
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3px;
+header h1 {
     font-family: "Josefin Sans", sans-serif;
-    margin-left: 30px;
+    margin-left: 5px;
 }
 
 header h1::first-line {
@@ -43,7 +38,7 @@ header h1::first-line {
     font-weight: bold;
 }
 
-.logo img {
+header img {
     order: -1;
     height: 40px;
     border-radius: 10%;
@@ -51,8 +46,8 @@ header h1::first-line {
 
 nav {
     display: flex;
-    align-items: center;
-    margin-right: 30px;
+    margin-right: 0;
+    margin-left: auto;
     font-weight: 800;
 }
 
@@ -179,12 +174,35 @@ main h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.info-section .events {
+    flex: 2;
+}
+
 .info-section div {
     flex: 1;
     padding: 20px;
     background-color: wheat;
     border-radius: 10px;
     text-align: center;
+}
+
+.info-section div h3 {
+    background-color: var(--tertiary-color);
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--secondary-color);
+    padding: 10px;
+    margin: 0;
+}
+
+.forecast p {
+    text-align: center;
+    margin: 10px;
+}
+
+.info-section div p {
+    font-family: "Port Lligat Sans", sans-serif;  
+    font-weight:550;  
+    margin: 10px;
 }
 
 .business-listings {
@@ -201,13 +219,6 @@ main h2 {
     padding-bottom: 2px;
     margin-bottom: 10px;
 }
-
-/* .business-listings img {
-    order: -1;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-} */
 
 .business-card h3 {
     text-align: center;
@@ -315,7 +326,7 @@ footer {
     margin: 0 8px;
 }
 
-.social-media a:hover {
+social-media a:hover {
     color: #ff6600;
 }
 

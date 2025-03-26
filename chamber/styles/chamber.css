@@ -31,24 +31,22 @@ header {
 
 .logo {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 3px;
     font-family: "Josefin Sans", sans-serif;
     margin-left: 30px;
 }
 
-.logo span {
-    font-size: 15px;
+header h1::first-line {
+    font-size: 25px;
     font-weight: bold;
-    text-transform: uppercase;
-}
-
-span {
-    font-size: 15px;
 }
 
 .logo img {
+    order: -1;
     height: 40px;
+    border-radius: 10%;
 }
 
 nav {
@@ -165,13 +163,6 @@ main h2 {
     color: var(--hf-color);
 }
 
-/* main h3 {
-    padding: 10px;
-    font-family: "Josefin Sans", sans-serif;
-    color: var(--hf-color);
-    background-color: #e0e0e0;
-} */
-
 .weather img {
     width: 100px;
     height: 100px;
@@ -203,6 +194,21 @@ main h2 {
     padding: 20px;
 }
 
+.business-info p {
+    color: var(--tertiary-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--tertiary-color);
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+}
+
+/* .business-listings img {
+    order: -1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+} */
+
 .business-card h3 {
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
@@ -210,8 +216,6 @@ main h2 {
 
 .business-card p {
     font-family: "Port Lligat Sans", sans-serif;
-    color: var(--hf-color)
-    
 }
 
 .business-card {
@@ -224,15 +228,32 @@ main h2 {
 
 .business-contact {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.business-contact p {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-family: "Port Lligat Sans", sans-serif;
+.business-contact img {
+    width: 100px;
+    height: auto;
+}
+
+.business-contact div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    gap: 5px;
     color: var(--hf-color);
-    margin: 0 10px;
+    margin: 0 30px;
+}
+
+.business-contact a {
+    color: red;
+    text-decoration: none;
+}
+
+.business-contact a:hover {
+    text-decoration: underline;
 }
 
 footer {

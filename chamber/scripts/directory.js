@@ -1,75 +1,73 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Dropdown Menu Functionality
-    document.querySelector(".more-button").addEventListener("click", function (event) {
-        event.stopPropagation();
-        document.querySelector(".more-nav").classList.toggle("show");
-    });
+    console.log("JavaScript Loaded!"); // Debugging Log
 
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function (event) {
-        let dropdown = document.querySelector(".more-nav");
-        if (!event.target.closest(".more")) {
-            dropdown.classList.remove("show");
-        }
-    });
+    // Dropdown Menu Functionality
+    const moreButton = document.querySelector(".more-button");
+    const dropdownMenu = document.querySelector(".more-nav");
+
+    if (moreButton && dropdownMenu) {
+        moreButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            dropdownMenu.classList.toggle("show");
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".more")) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    }
 
     // Display Current Year and Last Modified Date
-    const currentYear = new Date().getFullYear();
-    const lastModified = document.lastModified;
-    document.getElementById("currentyear").textContent = currentYear;
-    document.getElementById("lastModified").textContent = "Last Modified: " + lastModified;
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
     // Hamburger Menu Toggle
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-        const ariaExpanded = navMenu.classList.contains("active") ? "true" : "false";
-        navMenu.setAttribute("aria-expanded", ariaExpanded);
-    });
 
-    // Update Weather Information
-    const temperature = 5; // Example temperature (°C)
-    const windSpeed = 10; // Example wind speed (km/h)
-    updateWeatherInformation(temperature, windSpeed);
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+            navMenu.setAttribute("aria-expanded", navMenu.classList.contains("active").toString());
+        });
+    }
 
+    // Weather & Wind Chill Calculation
     function calculateWindChill(temp, wind) {
-        return (
-            13.12 +
-            0.6215 * temp -
-            11.37 * Math.pow(wind, 0.16) +
-            0.3965 * temp * Math.pow(wind, 0.16)
-        );
+        return temp <= 10 && wind > 4.8
+            ? (13.12 + 0.6215 * temp - 11.37 * Math.pow(wind, 0.16) + 0.3965 * temp * Math.pow(wind, 0.16)).toFixed(2) + " °C"
+            : "N/A";
     }
 
     function updateWeatherInformation(temp, wind) {
-        let windChillFactor = "N/A";
-        if (temp <= 10 && wind > 4.8) {
-            windChillFactor = calculateWindChill(temp, wind).toFixed(2) + " °C";
-        }
+        const windChillFactor = calculateWindChill(temp, wind);
+        const weatherElement = document.querySelector(".weather");
 
-        document.querySelector(".weather").innerHTML += `<p>Windchill: ${windChillFactor}</p>`;
+        if (weatherElement) {
+            weatherElement.innerHTML += `<p>Windchill: ${windChillFactor}</p>`;
+        }
     }
 
-    // Weather and Forecast Details
-    const weatherDetails = {
-        temperature: "75°F",
-        condition: "Partly Cloudy",
-        high: "85°F",
-        low: "52°F",
-        humidity: "34%",
-        sunrise: new Date().toLocaleTimeString(),
-        sunset: new Date().toLocaleTimeString(),
-    };
+    updateWeatherInformation(5, 10); // Example data
 
-    const forecastDetails = getForecastDetails();
+    // Fetch Weather Details
+    function getForecastDetails() {
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const today = new Date().getDay();
 
-    appendWeatherDetails(weatherDetails);
-    appendForecastDetails(forecastDetails);
+        return [
+            { day: "Today", temperature: "90°F" },
+            { day: daysOfWeek[(today + 1) % 7], temperature: "85°F" },
+            { day: daysOfWeek[(today + 2) % 7], temperature: "80°F" }
+        ];
+    }
 
     function appendWeatherDetails(details) {
         const weatherElement = document.querySelector(".weather");
+        if (!weatherElement) return;
+
         weatherElement.innerHTML += `
             <p>Temperature: ${details.temperature}</p>
             <p>Condition: ${details.condition}</p>
@@ -82,51 +80,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function appendForecastDetails(forecast) {
         const forecastElement = document.querySelector(".forecast");
+        if (!forecastElement) return;
+
         forecast.forEach((f) => {
             forecastElement.innerHTML += `<p>${f.day}: <strong>${f.temperature}</strong></p>`;
         });
     }
 
-    function getForecastDetails() {
-        const today = new Date();
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        return [
-            { day: "Today", temperature: "90°F" },
-            { day: daysOfWeek[(today.getDay() + 1) % 7], temperature: "85°F" },
-            { day: daysOfWeek[(today.getDay() + 2) % 7], temperature: "80°F" },
-        ];
+    appendWeatherDetails({
+        temperature: "75°F",
+        condition: "Partly Cloudy",
+        high: "85°F",
+        low: "52°F",
+        humidity: "34%",
+        sunrise: new Date().toLocaleTimeString(),
+        sunset: new Date().toLocaleTimeString(),
+    });
+
+    appendForecastDetails(getForecastDetails());
+
+    // 🌟 Grid/List Toggle Functionality
+    const gridViewButton = document.getElementById("gridView");
+    const listViewButton = document.getElementById("listView");
+    const container = document.querySelector(".business-listings");
+
+    if (!gridViewButton || !listViewButton || !container) {
+        console.error("Grid/List buttons or container missing!");
+        return;
     }
-
-    // Grid/List Toggle Functionality
-    document.getElementById("gridView").addEventListener("click", () => {
-        fetchData().then((data) => displayMembers(data, "grid"));
-    });
-
-    document.getElementById("listView").addEventListener("click", () => {
-        fetchData().then((data) => displayMembers(data, "list"));
-    });
 
     async function fetchData() {
         try {
             const response = await fetch("data/members.json");
+            if (!response.ok) throw new Error("Failed to fetch data");
+
             const data = await response.json();
-            return data; // Return data for further use
+            console.log("Fetched Data:", data);
+            return Array.isArray(data) ? data : [];
         } catch (error) {
             console.error("Error fetching data:", error);
+            return [];
         }
     }
 
     function displayMembers(data, view) {
-        const container = document.querySelector(".business-listings");
-        container.className = `business-listings ${view}`; // Switch view class
-        container.innerHTML = ""; // Clear existing content
+        container.className = `business-listings ${view}`;
+        container.innerHTML = "";
+
+        if (!Array.isArray(data) || data.length === 0) {
+            container.innerHTML = "<p>No members found.</p>";
+            return;
+        }
+
         data.forEach((member) => {
             const card = document.createElement("div");
             card.className = "business-card";
             card.innerHTML = `
                 <div class="business-info">
                     <h3>${member.name}</h3>
-                    <p>${member.membershipLevel} Member</p>
+                    <p>${member.membershipLevel === 3 ? "🥇Gold" : member.membershipLevel === 2 ? "🥈Silver" : ""} Member</p>
+                    <p>${member.description}</p>
                 </div>
                 <div class="business-contact">
                     <img src="${member.image}" alt="${member.name}">
@@ -141,6 +154,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Initial data fetch and default view setup
-    fetchData().then((data) => displayMembers(data, "grid")); // Default to grid view
+    gridViewButton.addEventListener("click", async () => {
+        console.log("Grid View Clicked");
+        const data = await fetchData();
+        displayMembers(data, "grid");
+    });
+
+    listViewButton.addEventListener("click", async () => {
+        console.log("List View Clicked");
+        const data = await fetchData();
+        displayMembers(data, "list");
+    });
+
+    // Initial Fetch & Default View
+    fetchData().then((data) => {
+        console.log("Initial Load: Displaying Grid View");
+        displayMembers(data, "grid");
+    });
 });

@@ -230,22 +230,31 @@ main h2 {
 
 .business-listings.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .business-listings.list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
+.business-listings {
+    margin: 20px;
+    padding: 10px;
+}
 
 .business-info p {
     color: var(--tertiary-color);
     font-weight: 600;
     border-bottom: 2px solid var(--tertiary-color);
     padding-bottom: 2px;
+    margin-bottom: 10px;
+}
+
+.business-info h3 {
+    font-size: 1.2em;
     margin-bottom: 10px;
 }
 
@@ -259,22 +268,31 @@ main h2 {
 }
 
 .business-card {
-    background: wheat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: wheat;
+    border: 1px solid var(--hf-color);
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.business-card:hover {
+    transform: scale(1.05);
 }
 
 .business-contact {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .business-contact img {
     width: 100px;
     height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .business-contact div {
@@ -282,17 +300,25 @@ main h2 {
     flex-direction: column;
     justify-content: center;
     text-align: justify;
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 1px;
     color: var(--hf-color);
-    margin: 0 30px;
+    margin: 0 8px;
+    padding: 0;
+}
+
+.business-contact div p {
+    margin: 2px 0;
 }
 
 .business-contact a {
-    color: red;
+    color: var(--hf-color);
+    font-weight: bold;
     text-decoration: none;
 }
 
 .business-contact a:hover {
+    color: var(--hover-color);
     text-decoration: underline;
 }
 

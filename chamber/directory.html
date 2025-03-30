@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Port+Lligat+Sans&family=Roboto:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Timbuktu Chamber of Commerce</title>
+    <title>Business Directory</title>
     <script src="scripts/directory.js" defer></script>
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Chamber Directory - Find Trusted Businesses">
@@ -31,7 +31,7 @@
         </div>
         <nav id="nav-menu">
             <ul class="desktop-nav">
-                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="#" title="Home">Home</a></li>
                 <li><a href="discover.html" title="Discover">Discover</a></li>
                 <li><a href="directory.html" title="Business-Directory">Business Directory</a></li>
                 <li><a href="join.html" title="Join">Join</a></li>
@@ -49,27 +49,23 @@
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-image">
-            <img src="images/logo.jpeg" alt="">
-            <p>Ad Block, Community Image</p>
-        </div>
-        <button class="cta">Register Tickets</button>
-    </section>
-
     <main>
-        <h2>Business Directory</h2>
-
-        <!-- Added Grid/List Toggle Buttons -->
-        <div class="view-toggle">
-            <button id="gridView">Grid View</button>
-            <button id="listView">List View</button>
-        </div>
-
-        <!-- Added Container for Dynamic Member Listings -->
-        <div class="business-listings grid">
-            <!-- Dynamic content will be injected here by JavaScript -->
-        </div>
+        <section id="hero">
+            <div class="hero-image">
+                <img src="images/logo.jpeg" alt="">
+                <p>Ad Block, Community Image</p>
+            </div>
+            <button class="cta">Register Tickets</button>
+        </section>
+        
+        <section class="directory">
+            <h2>Our Members</h2>
+            <div class="view-toggle">
+                <button id="gridView">Grid View</button>
+                <button id="listView">List View</button>
+            </div>
+            <div class="business-listings grid"></div>
+        </section>
     </main>
 
     <footer>

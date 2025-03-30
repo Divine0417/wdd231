@@ -136,6 +136,29 @@ nav ul li a:hover {
     height: 300px;
 }
 
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    background-color: var(--hf-color);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-toggle button:hover {
+    background-color: var(--hover-color);
+}
+
 .cta {
     display: inline-block;
     padding: 10px 20px;
@@ -205,12 +228,18 @@ main h2 {
     margin: 10px;
 }
 
-.business-listings {
-    display: flex;
-    justify-content: center;
+.business-listings.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
 }
+
+.business-listings.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 
 .business-info p {
     color: var(--tertiary-color);

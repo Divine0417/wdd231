@@ -1,0 +1,59 @@
+[
+    {
+      "name": "Business Alpha",
+      "address": "123 Alpha Street, Timbuktu",
+      "phone": "123-456-7890",
+      "website": "https://businessalpha.com",
+      "image": "images/avatar-nw.png",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Beta Enterprises",
+      "address": "456 Beta Avenue, Timbuktu",
+      "phone": "987-654-3210",
+      "website": "https://betaenterprises.com",
+      "image": "images/avatar.png",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Gamma Solutions",
+      "address": "789 Gamma Road, Timbuktu",
+      "phone": "555-123-4567",
+      "website": "https://gammasolutions.com",
+      "image": "images/avatar-nw.png",
+      "membershipLevel": "Platinum"
+    },
+    {
+      "name": "Delta Dynamics",
+      "address": "101 Delta Lane, Timbuktu",
+      "phone": "444-987-6543",
+      "website": "https://deltadynamics.com",
+      "image": "images/avatar.png",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Epsilon Innovations",
+      "address": "202 Epsilon Blvd, Timbuktu",
+      "phone": "333-555-7890",
+      "website": "https://epsiloninnovations.com",
+      "image": "images/avatar-nw.png",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Zeta Ventures",
+      "address": "303 Zeta Street, Timbuktu",
+      "phone": "222-444-1234",
+      "website": "https://zetaventures.com",
+      "image": "images/avatar.png",
+      "membershipLevel": "Platinum"
+    },
+    {
+      "name": "Eta Enterprises",
+      "address": "404 Eta Avenue, Timbuktu",
+      "phone": "111-888-7777",
+      "website": "https://etaenterprises.com",
+      "image": "images/avatar-nw.png",
+      "membershipLevel": "Gold"
+    }
+  ]
+  

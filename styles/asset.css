@@ -7,4 +7,33 @@
   .list {
     display: block;
   }
-  
+
+.weather-card {
+    background-color: #f0f8ff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.weather-card img {
+    max-width: 100px;
+    margin: 8px 0;
+}
+
+.weather-card p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 16px;
+    background-color: #f0f8ff;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

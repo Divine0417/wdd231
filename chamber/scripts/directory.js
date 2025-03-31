@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log("JavaScript Loaded!"); // Debugging Log
 
     // Dropdown Menu Functionality
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Display Current Year and Last Modified Date
     document.getElementById("currentyear").textContent = new Date().getFullYear();
     document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
@@ -34,141 +33,154 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Weather & Wind Chill Calculation
-    function calculateWindChill(temp, wind) {
-        return temp <= 10 && wind > 4.8
-            ? (13.12 + 0.6215 * temp - 11.37 * Math.pow(wind, 0.16) + 0.3965 * temp * Math.pow(wind, 0.16)).toFixed(2) + " °C"
-            : "N/A";
-    }
+    // Weather Section
+    const weatherAPIKey = "662df6608d27989682cde58fcce87ad6"; // Replace with your OpenWeatherMap API key
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Timbuktu&units=metric&appid=${weatherAPIKey}`;
+    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=Timbuktu&units=metric&appid=${weatherAPIKey}`;
 
-    function updateWeatherInformation(temp, wind) {
-        const windChillFactor = calculateWindChill(temp, wind);
-        const weatherElement = document.querySelector(".weather");
+    async function fetchWeather() {
+        try {
+            const weatherResponse = await fetch(weatherURL);
+            const forecastResponse = await fetch(forecastURL);
+            if (!weatherResponse.ok || !forecastResponse.ok) throw new Error("Failed to fetch weather data");
 
-        if (weatherElement) {
-            weatherElement.innerHTML += `<p>Windchill: ${windChillFactor}</p>`;
+            const weatherData = await weatherResponse.json();
+            const forecastData = await forecastResponse.json();
+
+            const currentTemp = document.getElementById("current-temp");
+            const weatherDescription = document.getElementById("weather-description");
+            const forecastContainer = document.getElementById("forecast");
+
+            if (currentTemp && weatherDescription && forecastContainer) {
+                currentTemp.textContent = `Current Temperature: ${Math.round(weatherData.main.temp)}°C`;
+                weatherDescription.textContent = `Conditions: ${weatherData.weather.map(w => w.description).join(", ")}`;
+                weatherDescription.innerHTML += `<br><strong>Humidity:</strong> ${weatherData.main.humidity}%`;
+                weatherDescription.innerHTML += `<br><strong>Wind Speed:</strong> ${weatherData.wind.speed} m/s`; 
+                weatherDescription.innerHTML += `<br><strong>Pressure:</strong> ${weatherData.main.pressure} hPa`;
+                weatherDescription.innerHTML += `<br><strong>Visibility:</strong> ${weatherData.visibility / 1000} km`;
+                weatherDescription.innerHTML += `<br><strong>Cloudiness:</strong> ${weatherData.clouds.all}%`;
+                weatherDescription.innerHTML += `<br><strong>Sunrise:</strong> ${new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString()}`;
+                weatherDescription.innerHTML += `<br><strong>Sunset:</strong> ${new Date(weatherData.sys.sunset * 1000).toLocaleTimeString()}`;
+                weatherDescription.innerHTML += `<br><strong>Feels Like:</strong> ${Math.round(weatherData.main.feels_like)}°C`;
+                weatherDescription.innerHTML += `<br><strong>Weather Main:</strong> ${weatherData.weather[0].main}`;
+                weatherDescription.innerHTML += `<br><strong>Base:</strong> ${weatherData.base}`;
+                weatherDescription.innerHTML += `<br><strong>Coordinates:</strong> ${weatherData.coord.lon}, ${weatherData.coord.lat}`;
+                weatherDescription.innerHTML += `<br><strong>Timezone:</strong> ${weatherData.timezone / 3600} hours`;
+                
+                const weatherIcon = weatherData.weather[0].icon;
+                const weatherIconHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="${weatherData.weather[0].description}" />`;
+                weatherDescription.innerHTML += weatherIconHTML;
+
+                forecastContainer.innerHTML = "";
+                forecastData.list.slice(0, 3).forEach((forecast) => {
+                    const date = new Date(forecast.dt * 1000);
+                    forecastContainer.innerHTML += `<p>${date.toLocaleDateString()}: ${Math.round(forecast.main.temp)}°C</p>`;
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
         }
     }
 
-    updateWeatherInformation(5, 10); // Example data
+    // Spotlight Section
+    async function fetchSpotlights() {
+        try {
+            const response = await fetch("data/members.json");
+            if (!response.ok) throw new Error("Failed to fetch members data");
 
-    // Fetch Weather Details
-    function getForecastDetails() {
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const today = new Date().getDay();
+            const members = await response.json();
+            const eligibleMembers = members.filter(member => member.membershipLevel >= 2);
+            const shuffled = eligibleMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-        return [
-            { day: "Today", temperature: "90°F" },
-            { day: daysOfWeek[(today + 1) % 7], temperature: "85°F" },
-            { day: daysOfWeek[(today + 2) % 7], temperature: "80°F" }
-        ];
+            const spotlightContainer = document.querySelector(".spotlight-container");
+            if (spotlightContainer) {
+                spotlightContainer.innerHTML = "";
+                shuffled.forEach(member => {
+                    spotlightContainer.innerHTML += `
+                        <div class="business-card">
+                            <h3>${member.name}</h3>
+                            <img src="${member.image}" alt="${member.name}">
+                            <p>${member.description}</p>
+                            <p><strong>Phone:</strong> ${member.phone}</p>
+                            <p><strong>Address:</strong> ${member.address}</p>
+                            <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                            <p><strong>Membership:</strong> ${member.membershipLevel === 3 ? "🥇Gold" : "🥈Silver"}</p>
+                        </div>
+                    `;
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching spotlight members:", error);
+        }
     }
 
-    function appendWeatherDetails(details) {
-        const weatherElement = document.querySelector(".weather");
-        if (!weatherElement) return;
-
-        weatherElement.innerHTML += `
-            <p>Temperature: ${details.temperature}</p>
-            <p>Condition: ${details.condition}</p>
-            <p>High: ${details.high}, Low: ${details.low}</p>
-            <p>Humidity: ${details.humidity}</p>
-            <p>Sunrise: ${details.sunrise}</p>
-            <p>Sunset: ${details.sunset}</p>
-        `;
-    }
-
-    function appendForecastDetails(forecast) {
-        const forecastElement = document.querySelector(".forecast");
-        if (!forecastElement) return;
-
-        forecast.forEach((f) => {
-            forecastElement.innerHTML += `<p>${f.day}: <strong>${f.temperature}</strong></p>`;
-        });
-    }
-
-    appendWeatherDetails({
-        temperature: "75°F",
-        condition: "Partly Cloudy",
-        high: "85°F",
-        low: "52°F",
-        humidity: "34%",
-        sunrise: new Date().toLocaleTimeString(),
-        sunset: new Date().toLocaleTimeString(),
-    });
-
-    appendForecastDetails(getForecastDetails());
-
-    // 🌟 Grid/List Toggle Functionality
+    // Grid/List Toggle Functionality
     const gridViewButton = document.getElementById("gridView");
     const listViewButton = document.getElementById("listView");
     const container = document.querySelector(".business-listings");
 
-    if (!gridViewButton || !listViewButton || !container) {
-        console.error("Grid/List buttons or container missing!");
-        return;
-    }
+    if (gridViewButton && listViewButton && container) {
+        async function fetchData() {
+            try {
+                const response = await fetch("data/members.json");
+                if (!response.ok) throw new Error("Failed to fetch data");
 
-    async function fetchData() {
-        try {
-            const response = await fetch("data/members.json");
-            if (!response.ok) throw new Error("Failed to fetch data");
-
-            const data = await response.json();
-            console.log("Fetched Data:", data);
-            return Array.isArray(data) ? data : [];
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            return [];
-        }
-    }
-
-    function displayMembers(data, view) {
-        container.className = `business-listings ${view}`;
-        container.innerHTML = "";
-
-        if (!Array.isArray(data) || data.length === 0) {
-            container.innerHTML = "<p>No members found.</p>";
-            return;
+                const data = await response.json();
+                return Array.isArray(data) ? data : [];
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                return [];
+            }
         }
 
-        data.forEach((member) => {
-            const card = document.createElement("div");
-            card.className = "business-card";
-            card.innerHTML = `
-                <div class="business-info">
-                    <h3>${member.name}</h3>
-                    <p>${member.membershipLevel === 3 ? "🥇Gold" : member.membershipLevel === 2 ? "🥈Silver" : ""} Member</p>
-                    <p>${member.description}</p>
-                </div>
-                <div class="business-contact">
-                    <img src="${member.image}" alt="${member.name}">
-                    <div>
-                        <p><strong>Address:</strong> ${member.address}</p>
-                        <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
-                        <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+        function displayMembers(data, view) {
+            container.className = `business-listings ${view}`;
+            container.innerHTML = "";
+
+            if (!Array.isArray(data) || data.length === 0) {
+                container.innerHTML = "<p>No members found.</p>";
+                return;
+            }
+
+            data.forEach((member) => {
+                const card = document.createElement("div");
+                card.className = "business-card";
+                card.innerHTML = `
+                    <div class="business-info">
+                        <h3>${member.name}</h3>
+                        <p>${member.membershipLevel === 3 ? "🥇Gold" : member.membershipLevel === 2 ? "🥈Silver" : ""} Member</p>
+                        <p>${member.description}</p>
                     </div>
-                </div>
-            `;
-            container.appendChild(card);
+                    <div class="business-contact">
+                        <img src="${member.image}" alt="${member.name}">
+                        <div>
+                            <p><strong>Address:</strong> ${member.address}</p>
+                            <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>
+                            <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        gridViewButton.addEventListener("click", async () => {
+            const data = await fetchData();
+            displayMembers(data, "grid");
+        });
+
+        listViewButton.addEventListener("click", async () => {
+            const data = await fetchData();
+            displayMembers(data, "list");
+        });
+
+        // Initial Fetch & Default View
+        fetchData().then((data) => {
+            displayMembers(data, "grid");
         });
     }
 
-    gridViewButton.addEventListener("click", async () => {
-        console.log("Grid View Clicked");
-        const data = await fetchData();
-        displayMembers(data, "grid");
-    });
-
-    listViewButton.addEventListener("click", async () => {
-        console.log("List View Clicked");
-        const data = await fetchData();
-        displayMembers(data, "list");
-    });
-
-    // Initial Fetch & Default View
-    fetchData().then((data) => {
-        console.log("Initial Load: Displaying Grid View");
-        displayMembers(data, "grid");
-    });
+    // Fetch weather and spotlight data for the home page
+    await fetchWeather();
+    await fetchSpotlights();
 });

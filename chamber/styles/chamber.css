@@ -247,7 +247,7 @@ main h2 {
     padding: 10px;
 }
 
-.business-info p {
+/* .business-info p {
     color: var(--tertiary-color);
     font-weight: 600;
     border-bottom: 2px solid var(--tertiary-color);
@@ -258,7 +258,8 @@ main h2 {
 .business-info h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
-}
+    color: var(--hf-color);
+} */
 
 .business-card h3 {
     text-align: center;
@@ -304,7 +305,6 @@ main h2 {
     text-align: justify;
     flex-wrap: wrap;
     gap: 1px;
-    color: var(--hf-color);
     margin: 0 8px;
     padding: 0;
 }

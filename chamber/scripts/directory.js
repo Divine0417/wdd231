@@ -63,9 +63,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 weatherDescription.innerHTML += `<br><strong>Sunset:</strong> ${new Date(weatherData.sys.sunset * 1000).toLocaleTimeString()}`;
                 weatherDescription.innerHTML += `<br><strong>Feels Like:</strong> ${Math.round(weatherData.main.feels_like)}°C`;
                 weatherDescription.innerHTML += `<br><strong>Weather Main:</strong> ${weatherData.weather[0].main}`;
-                weatherDescription.innerHTML += `<br><strong>Base:</strong> ${weatherData.base}`;
-                weatherDescription.innerHTML += `<br><strong>Coordinates:</strong> ${weatherData.coord.lon}, ${weatherData.coord.lat}`;
-                weatherDescription.innerHTML += `<br><strong>Timezone:</strong> ${weatherData.timezone / 3600} hours`;
                 
                 const weatherIcon = weatherData.weather[0].icon;
                 const weatherIconHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="${weatherData.weather[0].description}" />`;

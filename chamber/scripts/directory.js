@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <div class="business-card">
                             <h3>${member.name}</h3>
                             <img src="${member.image}" alt="${member.name}">
-                            <p>${member.description}</p>
+                            <p class="description">${member.description}</p>
                             <p><strong>Phone:</strong> ${member.phone}</p>
                             <p><strong>Address:</strong> ${member.address}</p>
                             <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="business-info">
                         <h3>${member.name}</h3>
                         <p>${member.membershipLevel === 3 ? "🥇Gold" : member.membershipLevel === 2 ? "🥈Silver" : ""} Member</p>
-                        <p>${member.description}</p>
+                        <p class="description">${member.description}</p>
                     </div>
                     <div class="business-contact">
                         <img src="${member.image}" alt="${member.name}">

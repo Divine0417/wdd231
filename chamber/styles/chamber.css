@@ -155,7 +155,7 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-view-toggle button:hover {
+.view-toggle button:hover {
     background-color: var(--hover-color);
 }
 
@@ -181,7 +181,7 @@ main h2 {
     color: var(--hf-color);
 }
 
-.weather img {
+/* .weather img {
     width: 100px;
     height: 100px;
     margin: 10px auto;
@@ -222,7 +222,7 @@ main h2 {
 .forecast p {
     text-align: center;
     margin: 10px;
-}
+} */
 
 .info-section div p {
     font-family: "Port Lligat Sans", sans-serif;  
@@ -247,27 +247,30 @@ main h2 {
     padding: 10px;
 }
 
-/* .business-info p {
-    color: var(--tertiary-color);
-    font-weight: 600;
-    border-bottom: 2px solid var(--tertiary-color);
-    padding-bottom: 2px;
-    margin-bottom: 10px;
-}
-
-.business-info h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: var(--hf-color);
-} */
-
-.business-card h3 {
+.business-card h3, .business-info h3 {
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+    margin: 2px 0;
+}
+
+.business-card .description, .business-info .description {
+    font-family: "Port Lligat Sans", sans-serif;
+    font-weight: 600;
+    border-bottom:  2px solid var(--hf-color);
+    margin: 10px 0;
+    padding-bottom: 5px;
+}
+
+.business-card strong {
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--hf-color);
+    font-weight: 900;
 }
 
 .business-card p {
     font-family: "Port Lligat Sans", sans-serif;
+    margin: 2px 0;
 }
 
 .business-card {
@@ -307,21 +310,6 @@ main h2 {
     gap: 1px;
     margin: 0 8px;
     padding: 0;
-}
-
-.business-contact div p {
-    margin: 2px 0;
-}
-
-.business-contact a {
-    color: var(--hf-color);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.business-contact a:hover {
-    color: var(--hover-color);
-    text-decoration: underline;
 }
 
 footer {

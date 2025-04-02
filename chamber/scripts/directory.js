@@ -69,9 +69,16 @@ document.addEventListener("DOMContentLoaded", async () => {
                 weatherDescription.innerHTML += weatherIconHTML;
 
                 forecastContainer.innerHTML = "";
-                forecastData.list.slice(0, 3).forEach((forecast) => {
+                const uniqueDays = new Set();
+                forecastData.list.forEach((forecast) => {
                     const date = new Date(forecast.dt * 1000);
-                    forecastContainer.innerHTML += `<p>${date.toLocaleDateString()}: ${Math.round(forecast.main.temp)}°C</p>`;
+                    const today = new Date();
+                    const isToday = date.toDateString() === today.toDateString();
+                    const dayName = isToday ? "Today" : date.toLocaleDateString("en-US", { weekday: "long" });
+                    if (!uniqueDays.has(dayName) && uniqueDays.size < 3) {
+                        uniqueDays.add(dayName);
+                        forecastContainer.innerHTML += `<p>${dayName}: ${Math.round(forecast.main.temp)}°C</p>`;
+                    }
                 });
             }
         } catch (error) {

@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
             navMenu.setAttribute("aria-expanded", navMenu.classList.contains("active").toString());
+            
+            // Ensure nav-menu stays above other elements
+            if (navMenu.classList.contains("active")) {
+                navMenu.style.zIndex = "10"; // Adjust z-index as needed
+            } else {
+                navMenu.style.zIndex = ""; // Reset to default
+            }
         });
     }
 

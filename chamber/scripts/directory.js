@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             const forecastContainer = document.getElementById("forecast");
 
             if (currentTemp && weatherDescription && forecastContainer) {
-                currentTemp.textContent = `Current Temperature: ${Math.round(weatherData.main.temp)}°C`;
-                weatherDescription.textContent = `Conditions: ${weatherData.weather.map(w => w.description).join(", ")}`;
+                currentTemp.innerHTML = `<strong>Current Temperature:</strong> ${Math.round(weatherData.main.temp)}°C`;
+                weatherDescription.innerHTML = `<strong>Conditions:</strong> ${weatherData.weather.map(w => w.description).join(", ")}`;
                 weatherDescription.innerHTML += `<br><strong>Humidity:</strong> ${weatherData.main.humidity}%`;
                 weatherDescription.innerHTML += `<br><strong>Wind Speed:</strong> ${weatherData.wind.speed} m/s`; 
                 weatherDescription.innerHTML += `<br><strong>Pressure:</strong> ${weatherData.main.pressure} hPa`;

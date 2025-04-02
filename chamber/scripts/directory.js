@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             const forecastContainer = document.getElementById("forecast");
 
             if (currentTemp && weatherDescription && forecastContainer) {
-                currentTemp.textContent = `Current Temperature: ${Math.round(weatherData.main.temp)}°C`;
-                weatherDescription.textContent = `Conditions: ${weatherData.weather.map(w => w.description).join(", ")}`;
+                currentTemp.innerHTML = `<strong>Current Temperature:</strong> ${Math.round(weatherData.main.temp)}°C`;
+                weatherDescription.innerHTML = `<strong>Conditions:</strong> ${weatherData.weather.map(w => w.description).join(", ")}`;
                 weatherDescription.innerHTML += `<br><strong>Humidity:</strong> ${weatherData.main.humidity}%`;
                 weatherDescription.innerHTML += `<br><strong>Wind Speed:</strong> ${weatherData.wind.speed} m/s`; 
                 weatherDescription.innerHTML += `<br><strong>Pressure:</strong> ${weatherData.main.pressure} hPa`;
@@ -69,9 +69,16 @@ document.addEventListener("DOMContentLoaded", async () => {
                 weatherDescription.innerHTML += weatherIconHTML;
 
                 forecastContainer.innerHTML = "";
-                forecastData.list.slice(0, 3).forEach((forecast) => {
+                const uniqueDays = new Set();
+                forecastData.list.forEach((forecast) => {
                     const date = new Date(forecast.dt * 1000);
-                    forecastContainer.innerHTML += `<p>${date.toLocaleDateString()}: ${Math.round(forecast.main.temp)}°C</p>`;
+                    const today = new Date();
+                    const isToday = date.toDateString() === today.toDateString();
+                    const dayName = isToday ? "Today" : date.toLocaleDateString("en-US", { weekday: "long" });
+                    if (!uniqueDays.has(dayName) && uniqueDays.size < 3) {
+                        uniqueDays.add(dayName);
+                        forecastContainer.innerHTML += `<p>${dayName}: ${Math.round(forecast.main.temp)}°C</p>`;
+                    }
                 });
             }
         } catch (error) {

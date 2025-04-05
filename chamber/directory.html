@@ -24,25 +24,25 @@
     <header title="Timbuktu Chamber of Commerce">
         <h1>Timbuktu<br>Chamber of Commerce</h1>
         <img src="images/logo.jpeg" alt="Timbuktu Chamber of Commerce">
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <nav id="nav-menu">
+        <nav id="nav-menu" aria-label="Main Navigation">
             <ul class="desktop-nav">
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li><a href="discover.html" title="Discover">Discover</a></li>
-                <li><a href="directory.html" title="Business-Directory">Business Directory</a></li>
-                <li><a href="join.html" title="Join">Join</a></li>
+                <li><a href="index.html" class="nav-link" title="Home">Home</a></li>
+                <li><a href="discover.html" class="nav-link" title="Discover">Discover</a></li>
+                <li><a href="directory.html" class="nav-link" title="Business Directory">Business Directory</a></li>
+                <li><a href="join.html" class="nav-link" title="Join">Join</a></li>
                 <li class="more">
-                    <button class="more-button">
+                    <button class="more-button" aria-expanded="false">
                         <span class="circle-icon" title="More">◑</span>
                     </button>
                     <ul class="more-nav">
-                        <li><a href="about.html" title="About">About</a></li>
-                        <li><a href="podcast.html" title="Podcast">Podcast</a></li>
-                        <li><a href="events.html" title="Events">Events</a></li>
+                        <li><a href="about.html" class="nav-link" title="About">About</a></li>
+                        <li><a href="podcast.html" class="nav-link" title="Podcast">Podcast</a></li>
+                        <li><a href="events.html" class="nav-link" title="Events">Events</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,7 +52,7 @@
     <main>
         <div id="hero">
             <div class="hero-image">
-                <img src="images/logo.jpeg" alt="">
+                <img src="images/logo.jpeg" alt="Chamber of Commerce Logo">
                 <p>Ad Block, Community Image</p>
             </div>
             <button class="cta">Join the Chamber</button>

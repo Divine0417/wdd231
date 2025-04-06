@@ -449,17 +449,126 @@ footer {
     margin-bottom: 10px;
 }
 
-.membership-cards .card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-in-out;
+/* Membership Cards */
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
   }
   
-  .membership-cards .card.loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }  
-
+  .membership-cards .card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .membership-cards .card:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+  }
+  
+  .membership-cards .card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .membership-cards .card button {
+    padding: 10px 20px;
+    background-color: var(--hf-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .membership-cards .card button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  /* Modals */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: var(--hf-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  /* Overlay */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 @media (max-width: 768px) {
     .hamburger {
         position: absolute;
@@ -546,4 +655,8 @@ footer {
     #info-section {
         flex-direction: column;
     }
+
+    .membership-cards {
+        flex-direction: column;
+      }
 }

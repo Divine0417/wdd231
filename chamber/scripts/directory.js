@@ -205,13 +205,16 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("timestamp").value = new Date().toISOString();
   });
   
-  function openModal(id) {
-    document.getElementById(id).style.display = "block";
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
   }
   
-  window.onclick = function (event) {
-    if (event.target.classList.contains("modal")) {
-      event.target.style.display = "none";
-    }
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
   }
+
   

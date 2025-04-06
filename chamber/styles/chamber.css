@@ -449,6 +449,17 @@ footer {
     margin-bottom: 10px;
 }
 
+.membership-cards .card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+  }
+  
+  .membership-cards .card.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }  
+
 @media (max-width: 768px) {
     .hamburger {
         position: absolute;

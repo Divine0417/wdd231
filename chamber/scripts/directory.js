@@ -195,3 +195,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     await fetchWeather();
     await fetchSpotlights();
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".membership-cards .card").forEach((card, index) => {
+      setTimeout(() => card.classList.add("loaded"), index * 200);
+    });
+  
+    // Set timestamp
+    document.getElementById("timestamp").value = new Date().toISOString();
+  });
+  
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  
+  window.onclick = function (event) {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+    }
+  }
+  

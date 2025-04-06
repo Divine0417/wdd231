@@ -123,3 +123,16 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("currentyear").textContent = currentYear;
     document.getElementById("lastModified").textContent = "Last Modified: " + lastModified;
 });
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector("nav");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    if (navMenu.classList.contains("active")) {
+        navMenu.style.display = "block";
+    } else {
+        navMenu.style.display = "none";
+    }
+});

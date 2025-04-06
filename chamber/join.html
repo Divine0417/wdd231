@@ -129,35 +129,30 @@
           </section>
           
           <!-- Membership Modals -->
-          <div id="modal-np" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-np-title" aria-hidden="true">
-            <div class="modal-content">
-              <h2 id="modal-np-title">NP Membership Benefits</h2>
-              <p>Access to networking events and basic training sessions.</p>
-              <button onclick="closeModal('modal-np')">Close</button>
-            </div>
-          </div>
-          <div id="modal-bronze" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-bronze-title" aria-hidden="true">
-            <div class="modal-content">
-              <h2 id="modal-bronze-title">Bronze Membership Benefits</h2>
-              <p>Includes NP benefits plus advertising opportunities.</p>
-              <button onclick="closeModal('modal-bronze')">Close</button>
-            </div>
-          </div>
-          <div id="modal-silver" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-silver-title" aria-hidden="true">
-            <div class="modal-content">
-              <h2 id="modal-silver-title">Silver Membership Benefits</h2>
-              <p>Includes Bronze benefits plus event discounts and spotlight positions.</p>
-              <button onclick="closeModal('modal-silver')">Close</button>
-            </div>
-          </div>
-          <div id="modal-gold" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-gold-title" aria-hidden="true">
-            <div class="modal-content">
-              <h2 id="modal-gold-title">Gold Membership Benefits</h2>
-              <p>Includes all benefits plus exclusive access to premium events and training.</p>
-              <button onclick="closeModal('modal-gold')">Close</button>
-            </div>
-          </div>
+          <dialog id="modal-np" class="modal" aria-labelledby="modal-np-title">
+            <h2 id="modal-np-title">NP Membership Benefits</h2>
+            <p>Access to networking events and basic training sessions.</p>
+            <button onclick="closeModal('modal-np')">Close</button>
+          </dialog>
+          <dialog id="modal-bronze" class="modal" aria-labelledby="modal-bronze-title">
+            <h2 id="modal-bronze-title">Bronze Membership Benefits</h2>
+            <p>Includes NP benefits plus advertising opportunities.</p>
+            <button onclick="closeModal('modal-bronze')">Close</button>
+          </dialog>
+          <dialog id="modal-silver" class="modal" aria-labelledby="modal-silver-title">
+            <h2 id="modal-silver-title">Silver Membership Benefits</h2>
+            <p>Includes Bronze benefits plus event discounts and spotlight positions.</p>
+            <button onclick="closeModal('modal-silver')">Close</button>
+          </dialog>
+          <dialog id="modal-gold" class="modal" aria-labelledby="modal-gold-title">
+            <h2 id="modal-gold-title">Gold Membership Benefits</h2>
+            <p>Includes all benefits plus exclusive access to premium events and training.</p>
+            <button onclick="closeModal('modal-gold')">Close</button>
+          </dialog>
     </main>
+    
+    <div id="overlay"></div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-info">

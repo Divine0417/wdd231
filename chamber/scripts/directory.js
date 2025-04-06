@@ -205,16 +205,19 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("timestamp").value = new Date().toISOString();
   });
   
-  function openModal(modalId) {
+function openModal(modalId) {
     const modal = document.getElementById(modalId);
+    const overlay = document.getElementById("overlay");
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
-  }
-  
-  function closeModal(modalId) {
+    overlay.classList.add('active'); // Show overlay
+}
+
+function closeModal(modalId) {
     const modal = document.getElementById(modalId);
+    const overlay = document.getElementById("overlay");
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
-  }
+    overlay.classList.remove('active'); // Hide overlay
+}
 
-  

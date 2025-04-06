@@ -184,7 +184,7 @@ nav ul li a:hover, .more-nav a:hover {
     border-radius: 5px;
 }
 
-.view-toggle button:hover, .cta:hover, #hero .cta:hover, .membership-cards .card button:hover {
+.view-toggle button:hover, .cta:hover, #hero .cta:hover, .membership-cards .card button:hover, .modal button:hover {
     background-color: var(--hover-color);
     border: 1px solid var(--tertiary-color);
     transform: scale(1.09);
@@ -229,7 +229,7 @@ main h2 {
     padding: 10px;
 }
 
-.business-listings.grid {
+business-listings.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -268,7 +268,6 @@ main h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
 
 .business-card:hover {
     transition: transform 0.3s ease;
@@ -457,9 +456,9 @@ footer {
     justify-content: center;
     margin: 20px 0;
     animation: fadeIn 1.5s ease-in-out;
-  }
-  
-  .membership-cards .card {
+}
+
+.membership-cards .card {
     flex: 1 1 calc(50% - 20px);
     background-color: #f4f4f4;
     padding: 20px;
@@ -467,19 +466,21 @@ footer {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .membership-cards .card:hover {
+}
+
+.membership-cards .card:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     border: 1px solid var(--tertiary-color);
-  }
-  
-  .membership-cards .card h3 {
+}
+
+.membership-cards .card h3 {
+    font-family: "Josefin Sans", sans-serif;
     margin-bottom: 10px;
-  }
-  
-  .membership-cards .card button {
+}
+
+.membership-cards .card button {
+    font-family: "Port Lligat Sans", sans-serif;
     padding: 10px 20px;
     background-color: var(--hf-color);
     color: white;
@@ -487,16 +488,17 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  /* Modals */
-  .modal {
+}
+
+/* Modals */
+.modal {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
+    text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -504,35 +506,36 @@ footer {
     width: 90%;
     max-width: 400px;
     animation: slideDown 0.5s ease-out;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     text-align: center;
-  }
-  
-  .modal-content h2 {
+}
+
+.modal-content h2 {
     margin-bottom: 10px;
-  }
-  
-  .modal-content p {
+}
+
+.modal-content p {
     margin-bottom: 20px;
-  }
-  
-  .modal-content button {
+}
+
+.modal button {
+    font-family: "Port Lligat Sans", sans-serif;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: var(--hf-color);
     color: white;
     border: none;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
-  }
-  
-  .modal-content button:hover {
-    background-color: var(--hover-color);
-  }
-  
-  /* Overlay */
-  .modal-overlay {
+}
+
+/* Overlay */
+.modal-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -541,30 +544,45 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#overlay.active {
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  @keyframes slideDown {
+}
+
+@keyframes slideDown {
     from {
-      opacity: 0;
-      transform: translateY(-20px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
 @media (max-width: 768px) {
     .hamburger {
@@ -655,5 +673,5 @@ footer {
 
     .membership-cards {
         flex-direction: column;
-      }
+    }
 }

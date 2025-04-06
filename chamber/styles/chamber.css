@@ -70,7 +70,7 @@ nav ul li a {
     transition: background 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .more-nav a:hover {
     background-color: #0080ff86;
 }
 
@@ -112,10 +112,6 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-.more-nav a:hover {
-    background-color: #004080a4;
-}
-
 .more-nav.show {
     display: block;
     opacity: 1;
@@ -129,9 +125,28 @@ nav ul li a:hover {
 }
 
 .hero-image img {
-    width: 100%;
+    width: 90%;
     height: 300px;
     display: block;
+    margin: 0 auto;
+}
+
+.hero-image p {
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 10px;
+    animation: slideInOut 20s infinite linear;
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 #hero .cta {
@@ -139,20 +154,17 @@ nav ul li a:hover {
     bottom: 50px;
     right: 10px;
     z-index: 10;
-    padding: 10px 20px;
-    margin-right: 10px;
+    padding: 10px;
+    margin-right: 50px;
     background-color: var(--hf-color);
     color: white;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 15px;
+    font-size: 10px;
     text-decoration: none;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-#hero .cta:hover {
-    background-color: var(--hover-color);
-    transform: scale(1.09);
+    max-width: 100px;
+    text-align: center;
 }
 
 .view-toggle {
@@ -172,22 +184,11 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.view-toggle button:hover, .cta:hover {
+.view-toggle button:hover, .cta:hover, #hero .cta:hover, .membership-cards .card button:hover {
     background-color: var(--hover-color);
+    border: 1px solid var(--tertiary-color);
     transform: scale(1.09);
     transition: transform 0.3s ease;
-}
-
-.cta {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--hf-color);
-    color: white;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 15px;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 20px;
 }
 
 main h2 {
@@ -449,6 +450,122 @@ footer {
     margin-bottom: 10px;
 }
 
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .membership-cards .card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .membership-cards .card:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    border: 1px solid var(--tertiary-color);
+  }
+  
+  .membership-cards .card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .membership-cards .card button {
+    padding: 10px 20px;
+    background-color: var(--hf-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Modals */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  .modal-content {
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: var(--hf-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: var(--hover-color);
+  }
+  
+  /* Overlay */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 @media (max-width: 768px) {
     .hamburger {
         position: absolute;
@@ -535,4 +652,8 @@ footer {
     #info-section {
         flex-direction: column;
     }
+
+    .membership-cards {
+        flex-direction: column;
+      }
 }

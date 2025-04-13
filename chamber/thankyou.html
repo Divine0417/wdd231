@@ -26,20 +26,6 @@
         <p>We appreciate your submission. Here’s a summary of your application:</p>
       
         <ul id="confirmationDetails"></ul>
-      </main>
-      
-      <script>
-        const params = new URLSearchParams(window.location.search);
-        const fields = ["firstName", "lastName", "email", "phone", "business", "timestamp"];
-        const list = document.getElementById("confirmationDetails");
-      
-        fields.forEach(field => {
-          if (params.has(field)) {
-            const li = document.createElement("li");
-            li.textContent = `${field.replace(/([A-Z])/g, " $1")}: ${params.get(field)}`;
-            list.appendChild(li);
-          }
-        });
-      </script>      
+      </main>    
 </body>
 </html>

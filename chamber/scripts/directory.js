@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("JavaScript Loaded!"); // Debugging Log
+    console.log("JavaScript Loaded!");
 
     // Dropdown Menu Functionality
     const moreButton = document.querySelector(".more-button");
@@ -9,11 +9,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         moreButton.addEventListener("click", function (event) {
             event.stopPropagation();
             dropdownMenu.classList.toggle("show");
+
+            if (dropdownMenu.classList.contains("show")) {
+                dropdownMenu.style.zIndex = "10";
+            } else {
+                dropdownMenu.style.zIndex = ""; 
+            }
         });
 
         document.addEventListener("click", function (event) {
             if (!event.target.closest(".more")) {
                 dropdownMenu.classList.remove("show");
+                dropdownMenu.style.zIndex = "";
             }
         });
     }
@@ -31,17 +38,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             navMenu.classList.toggle("active");
             navMenu.setAttribute("aria-expanded", navMenu.classList.contains("active").toString());
             
-            // Ensure nav-menu stays above other elements
             if (navMenu.classList.contains("active")) {
-                navMenu.style.zIndex = "10"; // Adjust z-index as needed
+                navMenu.style.zIndex = "10";
             } else {
-                navMenu.style.zIndex = ""; // Reset to default
+                navMenu.style.zIndex = "";
             }
         });
     }
 
     // Weather Section
-    const weatherAPIKey = "662df6608d27989682cde58fcce87ad6"; // Replace with your OpenWeatherMap API key
+    const weatherAPIKey = "662df6608d27989682cde58fcce87ad6";
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Timbuktu&units=metric&appid=${weatherAPIKey}`;
     const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=Timbuktu&units=metric&appid=${weatherAPIKey}`;
 
@@ -195,3 +201,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     await fetchWeather();
     await fetchSpotlights();
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".membership-cards .card").forEach((card, index) => {
+      setTimeout(() => card.classList.add("loaded"), index * 200);
+    });
+  
+    // Set timestamp
+    document.getElementById("timestamp").value = new Date().toISOString();
+  });
+  
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    const overlay = document.getElementById("overlay");
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.classList.add('active');
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    const overlay = document.getElementById("overlay");
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('active');
+}

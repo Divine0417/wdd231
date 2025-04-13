@@ -221,3 +221,26 @@ function closeModal(modalId) {
     overlay.classList.remove('active');
 }
 
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".membership-cards .card").forEach((card, index) => {
+      setTimeout(() => card.classList.add("loaded"), index * 200);
+    });
+  
+    // Set timestamp
+    document.getElementById("timestamp").value = new Date().toISOString();
+  });
+  
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+  }
+  
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  

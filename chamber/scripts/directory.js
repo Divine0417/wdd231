@@ -210,7 +210,7 @@ function openModal(modalId) {
     const overlay = document.getElementById("overlay");
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
-    overlay.classList.add('active'); // Show overlay
+    overlay.classList.add('active');
 }
 
 function closeModal(modalId) {
@@ -218,6 +218,6 @@ function closeModal(modalId) {
     const overlay = document.getElementById("overlay");
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
-    overlay.classList.remove('active'); // Hide overlay
+    overlay.classList.remove('active');
 }
 

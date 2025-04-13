@@ -208,7 +208,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   
     // Set timestamp
-    document.getElementById("timestamp").value = new Date().toISOString();
+    const timestampElement = document.getElementById("timestamp");
+    if (timestampElement) {
+        timestampElement.value = new Date().toISOString();
+    }
   });
   
 function openModal(modalId) {

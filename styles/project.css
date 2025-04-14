@@ -1,0 +1,60 @@
+ /* Color Schema */
+:root {
+  --primary-color: #004d99;
+  --secondary-color: #f0f0f0;
+  --assent-color: #E4E4E4;
+  --teritery-color: #333333;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--teritery-color);
+  padding: 2rem;
+  line-height: 1.6;
+}
+.headplan {
+  font-family: 'Montserrat', sans-serif; 
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+h2 {
+  font-family: 'Montserrat', sans-serif; 
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  width: fit-content;
+}
+header, section {
+  margin-bottom: 2rem;
+}
+code {
+  background: var(--assent-color);
+  padding: 0.2rem 0.4rem;
+  font-family: monospace;
+}
+code:hover {
+  background: #004d99af;
+  color: var(--secondary-color);
+}
+.wireframes img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--assent-color);
+  margin-top: 1rem;
+}
+footer {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  padding: 2px;
+  font-size: 0.8rem;
+}
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: tomato;
+}

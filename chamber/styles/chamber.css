@@ -373,7 +373,7 @@ ul {
     padding-bottom: 5px;
 }
 
-.business-card strong {
+.business-card strong, .grid-container p {
     font-family: "Josefin Sans", sans-serif;
     color: var(--hf-color);
     font-weight: 900;
@@ -386,7 +386,7 @@ ul {
     margin: 10px 0;
 }
 
-.business-card p, .business-card a {
+.business-card p, .business-card a, .grid-container p {
     color: var(--tertiary-color);
     font-family: "Port Lligat Sans", sans-serif;
     margin: 5px 0;
@@ -576,7 +576,7 @@ footer {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.membership-cards .card:hover {
+.membership-cards .card:hover, .card:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     border: 1px solid var(--tertiary-color);
@@ -587,23 +587,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.membership-cards .card button {
-    font-family: "Port Lligat Sans", sans-serif;
-    padding: 10px 20px;
-    background-color: var(--hf-color);
-    color: var(--secondary-color);
-  }
-  
-  .membership-cards .card:hover {
-    transform: scale(1.05);
-    background-color: #e0e0e0;
-  }
-  
-  .membership-cards .card h3 {
-    margin-bottom: 10px;
-  }
-  
-  .membership-cards .card button {
+  .membership-cards .card button, .card button {
     padding: 10px 20px;
     background-color: var(--hf-color);
     color: white;
@@ -612,10 +596,6 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
-.membership-cards .card button:hover {
-    background-color: var(--hover-color);
-  }
   
   /* Modals */
 .modal {
@@ -659,18 +639,6 @@ footer {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-}
-
-.modal-content {
-  text-align: center;
-}
-
-.modal-content h2 {
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  margin-bottom: 20px;
 }
 
 .modal-content button {
@@ -719,18 +687,34 @@ footer {
     padding: 1rem;
   }
 
-  .card {
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: #f9f9f9;
-  }
-  
-  .card figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.card figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+aside {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--hf-color);
+    color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+address {
+    font-family: "Teko", sans-serif;
+    font-size: 1.2em;
+}
 
 @keyframes fadeIn {
     from {

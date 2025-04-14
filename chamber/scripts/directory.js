@@ -208,7 +208,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   
     // Set timestamp
-    document.getElementById("timestamp").value = new Date().toISOString();
+    const timestampElement = document.getElementById("timestamp");
+    if (timestampElement) {
+        timestampElement.value = new Date().toISOString();
+    }
   });
   
 function openModal(modalId) {
@@ -226,3 +229,15 @@ function closeModal(modalId) {
     modal.setAttribute('aria-hidden', 'true');
     overlay.classList.remove('active');
 }
+
+const params = new URLSearchParams(window.location.search);
+        const fields = ["firstName", "lastName", "email", "phone", "business", "timestamp"];
+        const list = document.getElementById("confirmationDetails");
+      
+        fields.forEach(field => {
+          if (params.has(field)) {
+            const li = document.createElement("li");
+            li.textContent = `${field.replace(/([A-Z])/g, " $1")}: ${params.get(field)}`;
+            list.appendChild(li);
+          }
+        });

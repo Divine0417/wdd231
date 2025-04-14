@@ -4,9 +4,12 @@
         "deathdate",
         "imageurl",
         "lastname",
+        "Naija",
         "numofchildren",
         "Omotayo",
-        "Oyedele"
+        "Oyedele",
+        "Sankore",
+        "webp"
     ],
     "liveServer.settings.port": 5501
 }

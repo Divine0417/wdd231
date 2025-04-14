@@ -127,28 +127,16 @@ nav ul li a:hover, .more-nav a:hover {
 }
 
 .hero-image img {
-    width: 90%;
+    width: 100%;
     height: 300px;
-    display: block;
-    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+
 }
 
 .hero-image p {
     font-family: "Josefin Sans", sans-serif;
     margin-top: 10px;
     animation: slideInOut 20s infinite linear;
-}
-
-@keyframes slideInOut {
-    0% {
-        transform: translateX(100%);
-    }
-    50% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
 }
 
 #hero .cta {
@@ -385,7 +373,7 @@ ul {
     padding-bottom: 5px;
 }
 
-.business-card strong {
+.business-card strong, .grid-container p {
     font-family: "Josefin Sans", sans-serif;
     color: var(--hf-color);
     font-weight: 900;
@@ -398,7 +386,7 @@ ul {
     margin: 10px 0;
 }
 
-.business-card p, .business-card a {
+.business-card p, .business-card a, .grid-container p {
     color: var(--tertiary-color);
     font-family: "Port Lligat Sans", sans-serif;
     margin: 5px 0;
@@ -588,7 +576,7 @@ footer {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.membership-cards .card:hover {
+.membership-cards .card:hover, .card:hover {
     transform: scale(1.05);
     background-color: #e0e0e0;
     border: 1px solid var(--tertiary-color);
@@ -599,23 +587,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.membership-cards .card button {
-    font-family: "Port Lligat Sans", sans-serif;
-    padding: 10px 20px;
-    background-color: var(--hf-color);
-    color: var(--secondary-color);
-  }
-  
-  .membership-cards .card:hover {
-    transform: scale(1.05);
-    background-color: #e0e0e0;
-  }
-  
-  .membership-cards .card h3 {
-    margin-bottom: 10px;
-  }
-  
-  .membership-cards .card button {
+  .membership-cards .card button, .card button {
     padding: 10px 20px;
     background-color: var(--hf-color);
     color: white;
@@ -624,10 +596,6 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
-.membership-cards .card button:hover {
-    background-color: var(--hover-color);
-  }
   
   /* Modals */
 .modal {
@@ -673,18 +641,6 @@ footer {
     cursor: pointer;
 }
 
-.modal-content {
-  text-align: center;
-}
-
-.modal-content h2 {
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  margin-bottom: 20px;
-}
-
 .modal-content button {
   padding: 10px 20px;
   background-color: var(--hf-color);
@@ -725,30 +681,42 @@ footer {
     display: block;
 }
 
-/* Animations */
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+.card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.card figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+aside {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--hf-color);
+    color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+address {
+    font-family: "Teko", sans-serif;
+    font-size: 1.2em;
+}
+
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-  @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -769,108 +737,3 @@ footer {
       transform: translateY(0);
     }
   }
-
-@media (max-width: 768px) {
-    .hamburger {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        flex-direction: column;
-        gap: 5px;
-        display: flex;
-        transition: transform 0.3s ease-in-out;
-        z-index: 1001; /* Ensure hamburger is above the nav menu */
-    }
-
-    .bar {
-        width: 30px;
-        height: 4px;
-        background-color: var(--secondary-color);
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(50deg) translate(6px, 9px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-50deg) translate(5px, -9px);
-    }
-
-    #nav-menu {
-        display: none;
-        background-color: var(--hf-color);
-        z-index: 1000;
-    }
-
-    #nav-menu.active ul {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    #nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 5px;
-    }
-
-    #nav-menu ul li a {
-        display: block;
-        padding: 5px;
-        text-decoration: none;
-        color: var(--secondary-color);
-    }
-
-    .info-section {
-        flex-direction: column;
-    }
-
-    .info-section div {
-        margin-bottom: 20px;
-    }
-
-    .business-listings {
-        flex-direction: column;
-    }
-
-    .business-card {
-        margin-bottom: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .more-nav {
-        right: 10px;
-    }
-
-    .more-nav a {
-        color: var(--hf-color) !important;
-    }
-
-    #info-section {
-        flex-direction: column;
-    }
-
-    .membership-cards {
-        flex-direction: column;
-        width: 80%;
-        margin: 20px auto;
-    }
-
-    form {
-        width: 90%;
-    }
-    form input[type="text"], form input[type="email"], form input[type="tel"], form select, form textarea {
-        width: 100%;
-        margin: 5px 0;
-    }
-}

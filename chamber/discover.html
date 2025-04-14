@@ -6,12 +6,14 @@
     <meta name="author" content="Omotayo Ayobami Oyedele">
     <meta name="description" content="Discover local businesses, upcoming events, and networking opportunities with the Timbuktu Chamber of Commerce.">
     <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/mediaquery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Port+Lligat+Sans&family=Roboto:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Home | Chamber of Commerce</title>
+    <title>Discover | Chamber of Commerce</title>
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
     <link rel="icon" href="favicon/favicon1.ico" type="image/x-icon">
     <meta property="og:title" content="Chamber Directory - Find Trusted Businesses">
     <meta property="og:type" content="website">
@@ -24,7 +26,7 @@
     <header title="Timbuktu Chamber of Commerce">
         <h1>Timbuktu<br>Chamber of Commerce</h1>
         <img src="images/logo.jpeg" alt="Timbuktu Chamber of Commerce" loading="lazy">
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -53,35 +55,14 @@
         <div id="hero">
             <div class="hero-image">
                 <img src="images/logo1.jpeg" alt="Chamber of Commerce Logo" loading="lazy">
-                <p>Empowering Local Business</p>
+                <p>Ad Block, Community Image</p>
             </div>
             <a href="join.html" class="cta">Join the Chamber</a>
-        </div>
-
-        <h2>Home</h2>
-        
-        <section id="info-section">
-            <div class="info-box" id="events">
-                <h2>Events</h2>
-                <p>Stay updated with the latest events happening in Timbuktu.</p>
-            </div>
-            <div class="info-box" id="current-weather">
-                <h2>Current Weather</h2>
-                <div class="weather-info">
-                    <p id="current-temp"></p>
-                    <p id="weather-description"></p>
-                </div>
-            </div>
-            <div class="info-box" id="weather-forecast">
-                <h2>Weather Forecast</h2>
-                <div id="forecast"></div>
-            </div>
-        </section>
-
-        <section id="spotlights">
-            <h2>Spotlight Members</h2>
-            <div class="spotlight-container">
-            </div>
+        </div>  
+          
+        <aside id="visitorMessage" class="visitor-message"></aside>
+        <section id="discoverGrid" class="grid-container">
+          <!-- Cards will be inserted dynamically -->
         </section>
     </main>
 

@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <h2>${item.title}</h2>
         <figure>
-          <img src="${item.image}" alt="${item.alt}" />
+          <img src="${item.image}" alt="${item.alt}" loading="lazy">
         </figure>
         <address>${item.address}</address>
         <p>${item.description}</p>
-        <button>Learn More</button>
+        <button onclick="window.open('${item.url}', '_blank')">Learn More</button>
       `;
       container.appendChild(card);
     });
@@ -46,4 +46,3 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('lastVisit', now);
     messageContainer.textContent = message;
   }
-  

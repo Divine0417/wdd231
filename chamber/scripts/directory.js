@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     spotlightContainer.innerHTML += `
                         <div class="business-card">
                             <h3>${member.name}</h3>
-                            <img src="${member.image}" alt="${member.name}">
+                            <img src="${member.image}" alt="${member.name}" loading="lazy">
                             <p class="description">${member.description}</p>
                             <p><strong>Phone:</strong> ${member.phone}</p>
                             <p><strong>Address:</strong> ${member.address}</p>
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <p class="description">${member.description}</p>
                     </div>
                     <div class="business-contact">
-                        <img src="${member.image}" alt="${member.name}">
+                        <img src="${member.image}" alt="${member.name}" loading="lazy">
                         <div>
                             <p><strong>Address:</strong> ${member.address}</p>
                             <p><strong>Phone:</strong> <a href="tel:${member.phone}">${member.phone}</a></p>

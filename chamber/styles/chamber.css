@@ -744,3 +744,13 @@ address {
       transform: translateY(0);
     }
   }
+
+.current-page-name {
+    display: block;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 10px 0;
+}

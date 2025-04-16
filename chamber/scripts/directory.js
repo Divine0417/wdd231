@@ -256,3 +256,20 @@ const params = new URLSearchParams(window.location.search);
             list.appendChild(li);
           }
         });
+
+function displayCurrentPageName() {
+    const header = document.querySelector("header");
+    const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+    const formattedPageName = currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
+
+    const pageNameElement = document.createElement("div");
+    pageNameElement.className = "current-page-name mobile-only";
+    pageNameElement.textContent = formattedPageName === "Index" ? "Home" : formattedPageName;
+
+    header.insertBefore(pageNameElement, header.querySelector("nav"));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayCurrentPageName();
+    // ...existing code...
+});

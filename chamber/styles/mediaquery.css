@@ -103,6 +103,15 @@
     width: 100%;
     margin: 5px 0;
   }
+
+  .current-page-name {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 0 20px;
+  }
 }
   
   /* Small Screens */
@@ -146,4 +155,10 @@
     transition: transform 0.3s ease-in-out;
   }
 }
-  
+
+/* Hide the current page name on larger screens */
+@media (min-width: 769px) {
+  .current-page-name {
+    display: none;
+  }
+}

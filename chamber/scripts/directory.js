@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch weather and spotlight data for the home page
     await fetchWeather();
     await fetchSpotlights();
+    await loadIndexEvents(); // Load events into the #events section
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -273,3 +274,28 @@ document.addEventListener("DOMContentLoaded", () => {
     displayCurrentPageName();
     // ...existing code...
 });
+
+async function loadIndexEvents() {
+    try {
+        const response = await fetch("data/event.json");
+        const data = await response.json();
+        const eventsContainer = document.querySelector("#events");
+
+        if (eventsContainer) {
+            eventsContainer.innerHTML = ""; // Clear existing content
+            data.events.slice(0, 3).forEach(event => { // Limit to 3 events
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+                eventCard.innerHTML = `
+                    <h3>${event.title}</h3>
+                    <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+                    <address><strong>Location:</strong> ${event.location}</address>
+                    <p>${event.description}</p>
+                `;
+                eventsContainer.appendChild(eventCard);
+            });
+        }
+    } catch (error) {
+        console.error("Error loading events for index:", error);
+    }
+}

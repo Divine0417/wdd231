@@ -46,3 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('lastVisit', now);
     messageContainer.textContent = message;
   }
+
+  async function loadEvents() {
+    try {
+      const response = await fetch('data/event.json');
+      const data = await response.json();
+      const eventsContainer = document.getElementById('events-container');
+
+      data.events.forEach(event => {
+        const card = document.createElement('div');
+        card.classList.add('event-card');
+
+        card.innerHTML = `
+          <h3>${event.title}</h3>
+          <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+          <address><strong>Location:</strong> ${event.location}</address>
+          <p>${event.description}</p>
+          <button>${event.cta}</button>
+        `;
+
+        eventsContainer.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Error loading events:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadEvents);

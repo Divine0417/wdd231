@@ -1,7 +1,7 @@
 [
     {
         "title": "Item 7 Go",
-        "image": "images/item7go.jpeg",
+        "image": "images/item7go.webp",
         "alt": "Item 7 Go",
         "address": "Ibadan, Nigeria",
         "description": "A popular restaurant known for its delicious local and continental dishes.",
@@ -9,7 +9,7 @@
     },
     {
         "title": "Shoprite",
-        "image": "images/shoprite.jpg",
+        "image": "images/shoprite.webp",
         "alt": "Shoprite",
         "address": "Various Locations, Nigeria",
         "description": "A leading retail store offering a wide range of products.",
@@ -17,7 +17,7 @@
     },
     {
         "title": "National Museum Lagos",
-        "image": "images/national-museum.jpeg",
+        "image": "images/national-museum.webp",
         "alt": "National Museum Lagos",
         "address": "Onikan, Lagos, Nigeria",
         "description": "A museum showcasing Nigeria's rich cultural heritage and historical artifacts.",
@@ -25,7 +25,7 @@
     },
     {
         "title": "National Mosque Abuja",
-        "image": "images/mosqueabuja.jpeg",
+        "image": "images/mosqueabuja.webp",
         "alt": "National Mosque Abuja",
         "address": "Abuja, Nigeria",
         "description": "A prominent mosque in Nigeria, known for its stunning architecture and cultural significance.",
@@ -33,7 +33,7 @@
     },
     {
         "title": "Olumo Rock",
-        "image": "images/olumorock.jpg",
+        "image": "images/olumorock.webp",
         "alt": "Olumo Rock",
         "address": "Abeokuta, Nigeria",
         "description": "A popular tourist attraction known for its historical significance and breathtaking views.",
@@ -41,7 +41,7 @@
     },
     {
         "title": "Lekki Conservation Centre",
-        "image": "images/conservation-centre.jpg",
+        "image": "images/conservation-centre.webp",
         "alt": "Lekki Conservation Centre",
         "address": "Lekki, Lagos, Nigeria",
         "description": "A serene nature reserve with a canopy walkway and diverse wildlife.",
@@ -49,7 +49,7 @@
     },
     {
         "title": "Yankari National Park",
-        "image": "images/yankaripark.jpg",
+        "image": "images/yankaripark.webp",
         "alt": "Yankari National Park",
         "address": "Bauchi State, Nigeria",
         "description": "A wildlife park known for its hot springs and diverse animal species.",
@@ -57,7 +57,7 @@
     },
     {
         "title": "National Stadium Abuja",
-        "image": "images/stadiumabuja.jpeg",
+        "image": "images/stadiumabuja.webp",
         "alt": "National Stadium Abuja",
         "address": "Abuja, Nigeria",
         "description": "A multi-purpose stadium and a hub for sports and entertainment events in Nigeria.",

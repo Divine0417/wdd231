@@ -68,10 +68,17 @@ nav ul li a {
     border-radius: 5px;
 }
 
-nav ul li a:hover, .more-nav a:hover {
+nav ul li a:hover,
+.more-nav a:hover,
+nav ul li a.active,
+.more-nav a.active  {
     background-color: #0080ff86;
+    border-bottom: 2px solid var(--secondary-color);
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
     display: inline-block;
-    padding: 8px;
+    padding: 5px;
+    margin: 0 5px;
     width: fit-content;
 }
 
@@ -161,7 +168,7 @@ nav ul li a:hover, .more-nav a:hover {
     margin: 20px;
 }
 
-.view-toggle button {
+.view-toggle button, .call-to-action a  {
     padding: 10px 20px;
     background-color: var(--hf-color);
     color: var(--secondary-color);
@@ -171,7 +178,14 @@ nav ul li a:hover, .more-nav a:hover {
     border-radius: 5px;
 }
 
-.view-toggle button:hover, .cta:hover, #hero .cta:hover, .membership-cards .card button:hover, .modal button:hover, form input[type="submit"]:hover, .grid-container button:hover {
+.view-toggle button:hover,
+.cta:hover,
+#hero .cta:hover,
+.membership-cards .card button:hover,
+.modal button:hover,
+form input[type="submit"]:hover,
+.grid-container button:hover,
+.call-to-action a:hover {
     background-color: var(--hover-color);
     border: 1px solid var(--tertiary-color);
     transform: scale(1.09);

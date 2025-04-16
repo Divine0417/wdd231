@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Omotayo Ayobami Oyedele">
+    <meta name="description" content="Discover local businesses, upcoming events, and networking opportunities with the Timbuktu Chamber of Commerce.">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/mediaquery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Port+Lligat+Sans&family=Roboto:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About Us | Chamber of Commerce</title>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+    <link rel="icon" href="favicon/favicon1.ico" type="image/x-icon">
+    <meta property="og:title" content="Chamber Directory - Find Trusted Businesses">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://divine017.github.io/wdd231/chamber/images/logo.jpeg">
+    <meta property="og:url" content="https://divine017.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Find reputable businesses, discover networking opportunities, and stay informed about local events.">
+    <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
+</head>
+<body>
+    <header title="Timbuktu Chamber of Commerce">
+        <h1>Timbuktu<br>Chamber of Commerce</h1>
+        <img src="images/logo.webp" alt="Timbuktu Chamber of Commerce" loading="lazy">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        
+        <nav id="nav-menu">
+            <ul class="desktop-nav">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="discover.html" title="Discover">Discover</a></li>
+                <li><a href="directory.html" title="Business-Directory">Business Directory</a></li>
+                <li><a href="join.html" title="Join">Join</a></li>
+                <li class="more">
+                    <button class="more-button">
+                        <span class="circle-icon" title="More">◑</span>
+                    </button>
+                    <ul class="more-nav">
+                        <li><a href="about.html" title="About">About</a></li>
+                        <li><a href="podcast.html" title="Podcast">Podcast</a></li>
+                        <li><a href="events.html" title="Events">Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="hero">
+            <div class="hero-image">
+                <img src="images/logo1.webp" alt="Chamber of Commerce Logo" loading="lazy">
+                <p>Empowering Local Business</p>
+            </div>
+            <a href="join.html" class="cta">Join the Chamber</a>
+        </div>
+
+        <h2 class="about">About Our Chamber</h2>
+        <section class="mission-vision">
+            <h2>Mission</h2>
+            <p>Our mission is to support and promote local businesses, fostering a vibrant 
+                community through collaboration and innovation. We strive to create opportunities 
+                for growth, provide valuable resources, and build strong connections among businesses, 
+                ensuring a thriving and sustainable local economy for generations to come.</p>
+            <h2>Vision</h2>
+            <p>Our vision is to be the leading advocate for local businesses, creating a 
+                supportive environment that encourages innovation, collaboration, and growth. 
+                We aim to connect businesses with resources and opportunities that enhance 
+                their success and contribute to a thriving community.</p>
+        </section>
+
+        <section class="values">
+            <h2>Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We uphold the highest standards of honesty and transparency in all our dealings.</li>
+                <li><strong>Collaboration:</strong> We believe in the power of working together to achieve common goals.</li>
+                <li><strong>Innovation:</strong> We embrace creativity and new ideas to drive progress and growth.</li>
+                <li><strong>Community:</strong> We are committed to supporting and enhancing the local community.</li>
+                <li><strong>Excellence:</strong> We strive for excellence in everything we do, delivering the best possible service to our members.</li>
+                <li><strong>Inclusivity:</strong> We value diversity and inclusivity, ensuring that all voices are heard and respected.</li>    
+                <li><strong>Accountability:</strong> We take responsibility for our actions and their impact on the community.</li>
+                <li><strong>Respect:</strong> We treat everyone with respect and dignity, fostering a positive and supportive environment.</li>
+                <li><strong>Empowerment:</strong> We empower our members to succeed by providing the resources and support they need.</li>
+                <li><strong>Leadership:</strong> We lead by example, inspiring others to take action and make a difference.</li>
+                <li><strong>Adaptability:</strong> We are flexible and responsive to the changing needs of our members and the community.</li>
+                <li><strong>Commitment:</strong> We are dedicated to the success of our members and the community as a whole.</li>  
+                <li><strong>Service:</strong> We are here to serve our members and the community, providing support and resources to help them thrive.</li>
+                <li><strong>Trust:</strong> We build trust through open communication and reliable support.</li>
+                <li><strong>Growth:</strong> We are committed to the growth and development of our members and the community.</li>
+                <li><strong>Partnership:</strong> We believe in the power of partnerships to drive success and create opportunities.</li>
+                <li><strong>Advocacy:</strong> We advocate for the interests of our members and the local business community.</li>
+                <li><strong>Education:</strong> We provide educational resources and opportunities to help our members grow and succeed.</li>
+                <li><strong>Networking:</strong> We facilitate networking opportunities to connect our members with each other and the community.</li>
+                <li><strong>Support:</strong> We are here to support our members in their journey to success.</li>
+                <li><strong>Community Engagement:</strong> We actively engage with the community to understand their needs and concerns.</li>
+            </ul>
+        </section>
+        <section class="leadership">
+            <h2>Leadership</h2>
+            <p>Our leadership team is dedicated to serving the needs of our members and the community. 
+                With a diverse range of expertise and experience, we are committed to fostering a supportive 
+                environment for local businesses to thrive.</p>
+            <div class="leadership-team">
+                <div class="leader">
+                    <img src="images/avatar-nw.png" alt="Leader 1" loading="lazy">
+                    <h3>John Doe</h3>
+                    <p><strong>President</strong></p>
+                    <p>John is a seasoned entrepreneur with over 20 years of experience in the local business community.</p>
+                </div>
+                <div class="leader">
+                    <img src="images/avatar.png" alt="Leader 2" loading="lazy">
+                    <h3>Jane Smith</h3>
+                    <p><strong>Vice President</strong></p>
+                    <p>Jane is passionate about supporting local businesses and has a background in marketing and communications.</p>
+                </div>
+                <div class="leader">
+                    <img src="images/avatar-nw.png" alt="Leader 3" loading="lazy">
+                    <h3>Emily Johnson</h3>
+                    <p><strong>Treasurer</strong></p>
+                    <p>Emily has extensive experience in finance and is dedicated to ensuring the financial health of the Chamber.</p>
+                </div>
+                <div class="leader">
+                    <img src="images/avatar.png" alt="Leader 4" loading="lazy">
+                    <h3>Michael Brown</h3>
+                    <p><strong>Secretary</strong></p>
+                    <p>Michael is committed to transparency and communication within the Chamber and the local business community.</p>
+                </div>
+                <div class="leader">
+                    <img src="images/avatar-nw.png" alt="Leader 5" loading="lazy">
+                    <h3>Sarah Davis</h3>
+                    <p><strong>Board Member</strong></p>
+                    <p>Sarah is a local business owner with a passion for community engagement and development.</p>
+                </div>
+        </section>
+        <section class="impact-testimonial">
+            <div class="impact">
+                <h2>Community Impact</h2>
+                <p>Our Chamber is dedicated to making a positive impact in the local community through various initiatives and programs. We believe in giving back and supporting local causes that enhance the quality of life for all residents.</p>
+                <ul>
+                    <li>Launch the Timbuktu Youth Enterprise Program in 2013.</li>
+                    <li>Providing scholarships and educational resources for local students.</li>
+                    <li>Partnerned with 100+ businesses for local job creation.</li>
+                    <li>Organized 40+ training and networking events annually.</li>
+                    <li>Encouraging volunteerism among our members to give back to the community.</li>
+                </ul>
+            </div>
+            <div class="testimonial">
+                <h2>Testimonial</h2>
+                <p>"The Chamber has been instrumental in helping my business grow. The networking opportunities and resources provided have made a significant difference." - <i>Local Business Owner</i></p>
+                <p>"Joining the Chamber was one of the best decisions I made for my business. The support and community engagement are invaluable." - <i>Local Entrepreneur</i></p>
+            </div>
+        </section>
+        <section class="call-to-action">
+            <h2>Join our Movement</h2>
+            <p>Become a part of our vibrant community and take advantage of the resources we offer to help your business thrive. Sign up today!</p>
+            <a href="join.html" class="cta-button">Become a Member</a>    
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like more information about our Chamber, please feel free to reach out to us.</p>
+            <p>Email: <a href="mailto:info@timbuktucc.org">info@timbuktucc.org</a></p>
+            <div class="map">
+            <h3>Our Location</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d-122.4194154846816!3d37.77492977975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f0e0b1b1%3A0x4c4b8f5c6b8e1b1!2s123%20Main%20St%2C%20Timbuktu!5e0!3m2!1sen!2sus!4v1697040000000!5m2!1sen!2sus"  
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </section>
+        <section class="follow-us">
+            <h2>Follow Us</h2>
+            <p>Stay connected with us on social media for the latest updates and news.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="footer-header">Timbuktu Chamber of Commerce</p>
+                <p>123 Main St, Timbuktu</p>
+                <a title="email">info@timbuktucc.org</a>
+                <p>(123) 555-2520</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.twitter.com/" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" title="linkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-legal">
+                <p>WDD231 Class Project</p>
+                <p>💻 Omotayo Ayobami Oyedele 💻 Nigeria</p>
+                <p class="main">&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>     
+</body>
+</html>

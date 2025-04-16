@@ -1,3 +1,205 @@
+.about {
+  border-left: 5px solid var(--hover-color);
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.mission-vision {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  border: 2px solid var(--hf-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.mission-vision h2, .values h2 {
+  border-bottom: 2px solid var(--hover-color);
+}
+
+.mission-vision p {
+  font-family: "Port Lligat Sans", sans-serif;
+  font-size: 1.2rem;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  background-color: rgb(230, 231, 231);
+  border: 2px solid var(--hf-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.values ul, .impact ul {
+  list-style-type: square;
+  padding: 5px;
+}
+
+.values ul li, .impact ul li {
+  font-family: "Port Lligat Sans", sans-serif;
+  font-size: 1.2rem;
+  margin: 5px;
+  padding: 5px;
+}
+.values strong {
+  font-family: Josefin Sans, sans-serif;
+  color: var(--hf-color);
+}
+
+.leadership {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  padding: 20px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.leadership-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.leadership-team h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  margin-bottom: 10px;
+}
+
+.leadership-team p, .impact p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.leadership-team strong {
+  color: red;
+}
+
+.testimonial i {
+  color: var(--hf-color);
+}
+
+.leadership-team img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.impact-testimonial {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  border: 2px solid var(--hf-color);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.impact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  background-color: rgb(230, 231, 231);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 20px;
+  margin: 20px 0 20px 20px;
+  width: fit-content;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+  margin: 20px 20px 20px 0;
+  width: fit-content;
+}
+
+.testimonial p {
+  font-family: "Port Lligat Sans", sans-serif;
+  font-size: 1.2rem;
+  margin: 5px;
+  padding: 5px;
+}
+
+.call-to-action {
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  border: 2px solid var(--hf-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.call-to-action p {
+  font-family: "Port Lligat Sans", sans-serif;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.call-to-action a {
+  font-family: josefin sans, sans-serif;
+  color: var(--secondary-color);
+  margin-top: 10px;
+  padding: 8px;
+}
+.contact {
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  padding: 20px;
+  margin: 20px auto;
+}
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 15px;
+}
+.follow-us {
+  border-top: 2px solid var(--hover-color);
+  margin: 20px;
+}
+.current-page-name {
+  display: block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media (min-width: 769px) {
+  .current-page-name {
+    display: none;
+  }
+  
+}
+
 /* Small Screen Styles */
 @media (max-width: 768px) {
   .hamburger {
@@ -108,6 +310,15 @@
   form input[type="text"], form input[type="email"], form input[type="tel"], form select, form textarea {
     width: 100%;
     margin: 5px 0;
+  }
+
+  .current-page-name {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 0 20px;
   }
 }
   

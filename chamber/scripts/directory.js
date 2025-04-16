@@ -212,8 +212,23 @@ window.addEventListener("DOMContentLoaded", () => {
     if (timestampElement) {
         timestampElement.value = new Date().toISOString();
     }
-  });
+
+    highlightCurrentPage();
+});
+
+function highlightCurrentPage() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const currentPage = window.location.pathname.split('/').pop();
   
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+}
+
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     const overlay = document.getElementById("overlay");

@@ -46,3 +46,22 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('lastVisit', now);
     messageContainer.textContent = message;
   }
+
+  function displayCurrentPage() {
+    const header = document.querySelector('header');
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+    const formattedPageName = currentPage.charAt(0).toUpperCase() + currentPage.slice(1);
+
+    const pageNewElement = document.createElement('div');
+    pageNewElement.className = 'current-page-name mobile-only';
+    pageNewElement.textContent = formattedPageName === 'Index' ? 'Home' : formattedPageName;
+
+    header.insertBefore(pageNewElement, header.querySelector('nav'));
+  }
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayCurrentPage();
+    loadCards();
+    displayVisitMessage();
+    document.getElementById('year').textContent = new Date().getFullYear();
+});

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Port+Lligat+Sans&family=Roboto:wght@100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Discover | Chamber of Commerce</title>
+    <title>Events | Chamber of Commerce</title>
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/discover.js" defer></script>
     <link rel="icon" href="favicon/favicon1.ico" type="image/x-icon">
@@ -50,22 +50,21 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <div id="hero">
             <div class="hero-image">
                 <img src="images/logo1.webp" alt="Chamber of Commerce Logo" loading="lazy">
-                <p>Ad Block, Community Image</p>
+                <p>Empowering Local Business</p>
             </div>
             <a href="join.html" class="cta">Join the Chamber</a>
-        </div>  
-          
-        <aside id="visitorMessage" class="visitor-message"></aside>
-        <div id="discoverGrid" class="grid-container">
-          <!-- Cards will be inserted dynamically -->
         </div>
+        <section class="events-section">
+            <h2>Upcoming Events</h2>
+            <div class="events-container" id="events-container">
+                <!--Events will inserted here by JS-->
+            </div>
+        </section>
     </main>
-
     <footer>
         <div class="footer-content">
             <div class="footer-info">
@@ -86,6 +85,6 @@
                 <p id="lastModified"></p>
             </div>
         </div>
-    </footer>
+    </footer>     
 </body>
 </html>

@@ -1,9 +1,35 @@
-.about {
-  border-left: 5px solid var(--hover-color);
-  padding: 5px;
-  margin-bottom: 20px;
+.events-section h2,
+.about, #podcast h2 {
+  border-left: 3px solid var(--hover-color);
+  padding-left: 5px;
 }
-
+#events-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 20px;
+}
+.event-card {
+  background-color: rgb(230, 231, 231);
+  border: 2px solid var(--hf-color);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 5px auto;
+  text-align: center;
+}
+.event-card h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  margin-bottom: 10px;
+}
+.event-card p {
+  font-family: josefin sans, sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: .5rem;
+}
 .mission-vision {
   display: flex;
   flex-direction: column;
@@ -16,7 +42,9 @@
   padding: 20px;
   margin: 20px;
 }
-
+#newsletter-form button {
+  margin: 5px;
+}
 .mission-vision h2, .values h2 {
   border-bottom: 2px solid var(--hover-color);
 }
@@ -191,6 +219,67 @@ iframe {
   color: var(--secondary-color);
   text-align: center;
   margin: 10px 0;
+}
+.podcast-episodes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(230, 231, 231);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px auto;
+}
+.podcast-episodes h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 1.3rem;
+  color: var(--tertiary-color);
+  border-bottom: 2px solid var(--hover-color);
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+.podcast-episodes p  {
+  font-family: "Port Lligat Sans", sans-serif;
+  font-size: 1.1rem;
+  padding: 2px;
+}
+#podcast p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px;
+}
+.podcast-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.podcast-links a {
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--hf-color);
+}
+.podcast-links a:hover {
+  text-decoration: underline;
+}
+.podcast-subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.podcast-subscribe h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
+  color: var(--tertiary-color);
+  margin-bottom: 10px;
+  border-top: 2px solid var(--hover-color);
 }
 
 @media (min-width: 769px) {

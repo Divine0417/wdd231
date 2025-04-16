@@ -200,34 +200,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch weather and spotlight data for the home page
     await fetchWeather();
     await fetchSpotlights();
+    await loadIndexEvents();
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".membership-cards .card").forEach((card, index) => {
-      setTimeout(() => card.classList.add("loaded"), index * 200);
-    });
+    const membershipCards = document.querySelectorAll(".membership-cards .card");
+    if (membershipCards.length > 0) {
+        membershipCards.forEach((card, index) => {
+            setTimeout(() => card.classList.add("loaded"), index * 200);
+        });
+    }
   
     // Set timestamp
     const timestampElement = document.getElementById("timestamp");
     if (timestampElement) {
         timestampElement.value = new Date().toISOString();
     }
-
-    highlightCurrentPage();
 });
-
-function highlightCurrentPage() {
-    const navLinks = document.querySelectorAll('nav ul li a');
-    const currentPage = window.location.pathname.split('/').pop();
-  
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-}
 
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -246,13 +235,46 @@ function closeModal(modalId) {
 }
 
 const params = new URLSearchParams(window.location.search);
-        const fields = ["firstName", "lastName", "email", "phone", "business", "timestamp"];
-        const list = document.getElementById("confirmationDetails");
-      
-        fields.forEach(field => {
-          if (params.has(field)) {
-            const li = document.createElement("li");
-            li.textContent = `${field.replace(/([A-Z])/g, " $1")}: ${params.get(field)}`;
-            list.appendChild(li);
-          }
-        });
+const fields = ["firstName", "lastName", "email", "phone", "business", "timestamp"];
+const list = document.getElementById("confirmationDetails");
+
+fields.forEach(field => {
+    if (params.has(field)) {
+        const li = document.createElement("li");
+        li.textContent = `${field.replace(/([A-Z])/g, " $1")}: ${params.get(field)}`;
+        list.appendChild(li);
+    }
+});
+
+async function loadIndexEvents() {
+    try {
+        const response = await fetch('data/events.json');
+        const data = await response.json();
+        const eventsContainer = document.getElementById('events');
+
+        if (eventsContainer) {
+                const existingHeading = eventsContainer.querySelector('h2');
+                eventsContainer.innerHTML = "";
+                if (existingHeading) {
+                        eventsContainer.appendChild(existingHeading);
+                }
+
+                data.events.slice(0, 3).forEach(event => {
+                        const eventCard = document.createElement('div');
+                        eventCard.classList.add('event-card');
+
+                        eventCard.innerHTML = `
+                                <h3>${event.title}</h3>
+                                <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+                                <p><strong>Time:</strong> ${event.time}</p>
+                                <p><strong>Location:</strong> ${event.location}</p>
+                                <p>${event.description}</p>
+                                <button onclick="window.open('${event.cta.url}', '_blank')">${event.cta.text}</button>
+                        `;
+                        eventsContainer.appendChild(eventCard);
+                });
+        }
+    } catch (error) {
+        console.error("Error loading events:", error);
+    }
+}
